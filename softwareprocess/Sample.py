@@ -65,7 +65,29 @@ class Sample(object):
         return result
     
     def integrate(self, lowBound, highBound, n, f):
-        pass
+        epsilon = 0.001
+        simpsonOld = 0.0
+        simpsonNew = epsilon
+        slices = 4
+        while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+            simpsonOld = simpsonNew
+            simpsonNew = self.calculateSimpson(f, n, lowBound, highBound, slices)
+            slices = slices * 2
+        return simpsonNew
+
+    def calculateSimpson(self, f, n, lowBound, highBound, slices):
+        window = (highBound - lowBound) / slices
+
+        # go ahead and add the first term to the value
+        val = f(lowBound, n) + f(highBound, n)
+        delta = 0
+        for s in xrange(1, slices):
+            if s % 2 == 0: # even term
+                val = val + 2 * f(lowBound + s * window, n)
+            else: # odd term
+                val = val + 4 * f(lowBound + s * window, n)
+        return val * window / 3
+
         
         
     
