@@ -258,3 +258,15 @@ class SampleTest(unittest.TestCase):
             return u
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (1.0/2), 3)
+
+    def test500_020_ShouldCalculateAreaUnderUSquared(self):
+        def curve(u, n):
+            return u**2
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (1.0/3), 3)
+
+    def test500_030_ShouldCalculateAreaUnderUSquared(self):
+        def curve(u, n):
+            return u**2
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (1.0/3), 3)
