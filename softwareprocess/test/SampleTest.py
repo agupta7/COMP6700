@@ -235,3 +235,26 @@ class SampleTest(unittest.TestCase):
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.f(1, 5), 0.578703704)
         
+# 500 integrate
+# Analysis
+#   inputs
+#       lowBound -> float mandatory validated : The left end of the curve under which to find area
+#       highBound -> float mandatory validated : The right end of the curve under which to find area
+#       n -> numeric mandatory validated     : The number that will be passed to f while approximating the area
+#       f -> function to mandatory validated : the function to find the area of.  accepts two arguments u and n
+#   outputs
+#       float -> a number that is close enough to the area under the curve.  Close enough is defined by requirements
+#
+# Happy path
+#   nominal case:   integrate(0.0, 1, doesn't matter, f(u,n)=u) -> 0.5
+#                   integrate(0.0, 1, doesn't matter, f(u,n)=u**2) -> 1/3
+#                   integrate(0.0, 1, doesn't matter, f(u,n)=u**6) -> 1/7
+#                   integrate(0.0, 1, doesn't matter, f(u,n)=u**100) -> 1/101
+# Sad path
+#       none ... all inputs are pre-validated since this is an internal method
+
+    def test500_010_ShouldCalculateAreaUnderU(self):
+        def curve(u, n):
+            return u
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (1.0/2), 3)
