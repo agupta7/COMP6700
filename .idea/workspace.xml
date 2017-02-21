@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="Updated excel sheet with post mortem data in time log">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/SampleTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/SampleTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="SampleTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/softwareprocess/test/SampleTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="259" column="12" lean-forward="false" selection-start-line="259" selection-start-column="12" selection-end-line="259" selection-end-column="12" />
+            <state relative-caret-position="380">
+              <caret line="294" column="24" lean-forward="true" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#899#1127#0" expanded="false" />
@@ -478,6 +477,12 @@
     <history-entry file="All_Tests_(TDD) - 2017.02.20 at 17h 26m 42s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.20 at 18h 10m 25s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.20 at 18h 10m 37s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_SampleTest - 2017.02.20 at 16h 44m 39s.xml">
       <configuration name="Unittests in SampleTest" configurationId="tests" />
     </history-entry>
@@ -495,7 +500,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39828694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39828694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -751,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/test/SampleTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="259" column="12" lean-forward="false" selection-start-line="259" selection-start-column="12" selection-end-line="259" selection-end-column="12" />
+        <state relative-caret-position="380">
+          <caret line="294" column="24" lean-forward="true" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#899#1127#0" expanded="false" />
