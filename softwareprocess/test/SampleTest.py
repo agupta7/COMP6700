@@ -250,6 +250,8 @@ class SampleTest(unittest.TestCase):
 #                   integrate(0.0, 1, doesn't matter, f(u,n)=u**2) -> 1/3
 #                   integrate(0.0, 1, doesn't matter, f(u,n)=u**6) -> 1/7
 #                   integrate(0.0, 1, doesn't matter, f(u,n)=u**100) -> 1/101
+#                   integrate(0.0, 1, 9, f(u,n) = u**12 + n * u**8) -> 1 and 1/13 or 14/13
+#                   integrate(0.5, 1, 4, f(u,n) = n/u) -> ln(nu) evaluated at 1 and 0.5
 # Sad path
 #       none ... all inputs are pre-validated since this is an internal method
 
@@ -276,3 +278,21 @@ class SampleTest(unittest.TestCase):
             return u**100
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (1.0/101), 3)
+
+    def test500_050_ShouldCalculateAreaUnderUTo12And9UTo8(self):
+        def curve(u, n):
+            return u**12 + n * (u**8)
+        mySample = SM.Sample(9)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (14.0/13), 3)
+
+    def test500_060_ShouldCalculateAreaUnderUTo12And9UTo8(self):
+        def curve(u, n):
+            return u ** 12 + n * (u ** 8)
+        mySample = SM.Sample(9)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (14.0 / 13), 3)
+
+    def test500_050_ShouldCalculateAreaUnderUTo12And9UTo8(self):
+        def curve(u, n):
+            return n / u
+        mySample = SM.Sample(9)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (14.0 / 13), 3)
