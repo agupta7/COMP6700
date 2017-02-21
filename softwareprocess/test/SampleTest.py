@@ -294,5 +294,6 @@ class SampleTest(unittest.TestCase):
     def test500_050_ShouldCalculateAreaUnderUTo12And9UTo8(self):
         def curve(u, n):
             return n / u
-        mySample = SM.Sample(9)
-        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), (14.0 / 13), 3)
+        n = 4
+        mySample = SM.Sample(n)
+        self.assertAlmostEquals(mySample.integrate(0.0, 1.0, mySample.getN(), curve), math.log(n * 1) - math.log(n * 0.5), 3)
