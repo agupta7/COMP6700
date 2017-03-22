@@ -40,5 +40,29 @@ class StarSightingTest(unittest.TestCase):
         self.assertIsInstance(ss, SS.StarSighting)
         self.assertEquals(ss.getDegrees(), 20)
         self.assertEquals(ss.getMinutes(), 30.0)
+
+    def test100_020_ShouldConstructLowDegrees(self):
+        ss = SS.StarSighting(0, 30.0)
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 0)
+        self.assertEquals(ss.getMinutes(), 30.0)
+
+    def test100_030_ShouldConstructHighDegrees(self):
+        ss = SS.StarSighting(89, 30.0)
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 89)
+        self.assertEquals(ss.getMinutes(), 30.0)
+
+    def test100_040_ShouldConstructLowMinutes(self):
+        ss = SS.StarSighting(20, 0.0)
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 20)
+        self.assertEquals(ss.getMinutes(), 0.0)
+
+    def test100_050_ShouldConstructHighMinutes(self):
+        ss = SS.StarSighting(20, 59.9)
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 20)
+        self.assertEquals(ss.getMinutes(), 59.9)
 # ---- Unit tests
 # ----
