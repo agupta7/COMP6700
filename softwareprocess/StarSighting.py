@@ -8,5 +8,5 @@ class StarSighting(object):
     def getDegrees(self):
         return self._degrees
 
-    def getMintues(self):
+    def getMinutes(self):
         return self._minutes
