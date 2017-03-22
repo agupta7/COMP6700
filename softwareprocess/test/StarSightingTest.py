@@ -36,6 +36,6 @@ class StarSightingTest(unittest.TestCase):
 #                       minutes too high = 60
 #
     def test100_010_ShouldConstructNominalValues(self):
-        self.assertIsInstace(SS.StarSighting(20, 30.0), SS.StarSighting)
+        self.assertIsInstance(SS.StarSighting(20, 30.0), SS.StarSighting)
 # ---- Unit tests
 # ----
