@@ -33,3 +33,26 @@ class DispatchTest(unittest.TestCase):
     def test100_940_DispatchNone(self):
         dict = dispatch.dispatch(None)
         self.assertEquals(dict['error'], 'parameter is missing')
+
+
+    def test200_010Calculation(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3'})
+        self.assertEquals('7d6.0', dict['altitude'])
+    def test200_020Calculation(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'height': '100'})
+        self.assertEquals('6d56.3', dict['altitude'])
+    def test200_030Calculation(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60'})
+        self.assertEquals('6d56.1', dict['altitude'])
+    def test200_040Calculation(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60', 'pressure': '900'})
+        self.assertEquals('6d56.9', dict['altitude'])
+    def test200_050Calculation(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60', 'pressure': '900', 'horizon': 'artificial'})
+        self.assertEquals('7d6.6', dict['altitude'])
+    def test200_910CalculationErrorObservationMissing(self):
+        dict = dispatch.dispatch({'op': 'adjust'})
+        self.assertEquals('mandatory information is missing', dict['error'])
+    def test200_920CalculationErrorObservationInvalid(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'observation': '12.65'})
+        self.assertEquals('observation is invalid', dict['error'])
