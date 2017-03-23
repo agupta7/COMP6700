@@ -28,6 +28,7 @@ def dispatch(values=None):
 def dispatchAdjust(values):
     if 'obervation' not in values:
         values['error'] = 'mandatory information is missing'
+        return values
 
     try:
         ss = SS.StarSighting.fromDegreeMinString(values['observation'])

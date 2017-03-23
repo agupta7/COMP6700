@@ -43,10 +43,10 @@ class DispatchTest(unittest.TestCase):
         self.assertEquals('6d56.3', dict['altitude'])
     def test200_030Calculation(self):
         dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60'})
-        self.assertEquals('6d56.1', dict['altitude'])
+        self.assertEquals('7d5.8', dict['altitude'])
     def test200_040Calculation(self):
         dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60', 'pressure': '900'})
-        self.assertEquals('6d56.9', dict['altitude'])
+        self.assertEquals('7d6.6', dict['altitude'])
     def test200_050Calculation(self):
         dict = dispatch.dispatch({'op': 'adjust', 'observation': '7d13.3', 'temperature': '60', 'pressure': '900', 'horizon': 'artificial'})
         self.assertEquals('7d6.6', dict['altitude'])
