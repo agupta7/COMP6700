@@ -6,6 +6,7 @@ class StarSightingTest(unittest.TestCase):
         self.strDegreesBound = "Degrees should be an integer >= 0 and < 90."
         self.strMinutesBound = "Minutes should be a decimal >= 0.0 and < 60.0."
         self.strHeightError = "Height should be a number >= 0.0"
+        self.strTemperatureError = "Temperature should be an integer >= -20 & <= 120 in Farenheit"
 
     def tearDown(self):
         pass
@@ -147,39 +148,48 @@ class StarSightingTest(unittest.TestCase):
 #           temperature -> high value = 120;
 # ----Sad path analysis
 #           height :   None temperature
+#                       non-int temperature -> 98.6
 #                      wrong height type = 'a'
 #                      temperature too low = -21
 #                      temperature too high = 121
 #
-    def test200_010_ShouldSetHeightNominal(self):
+    def test300_010_ShouldSetTemperatureNominal(self):
         ss = SS.StarSighting(20, 30.5)
-        ss.setHeight(6.5)
-        self.assertEquals(ss.getHeight(), 6.5)
-    def test200_020_ShouldSetTemperatureLow(self):
+        ss.setTemperature(70)
+        self.assertEquals(ss.getTemperature(), 70)
+    def test300_020_ShouldSetTemperatureLow(self):
         ss = SS.StarSighting(20, 30.5)
-        ss.setHeight(0.0)
-        self.assertEquals(ss.getHeight(), 0)
-    def test200_030_ShouldSetTemperatureHigh(self):
-        ss = SS.StarSighting(20, 30.5)
-        ss.setHeight(0.0)
-        self.assertEquals(ss.getHeight(), 0)
+        ss.setTemperature(-20)
+        self.assertEquals(ss.getTemperature(), -20)
+    def test300_030_ShouldSetTemperatureHigh(self):
+        ss = SS.StarSighting(120, 30.5)
+        ss.setTemperature(0.0)
+        self.assertEquals(ss.getTemperature(), 120)
 
-    def test200_910_ShouldRaiseExceptionHeightNull(self):
+    def test300_910_ShouldRaiseExceptionTemperatureNull(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setHeight(None)
-        self.assertEquals(cxt.exception.args[0], self.strHeightError)
-
-    def test200_920_ShouldRaiseExceptionHeightNotNumber(self):
+            ss.setTemperature(None)
+        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+    def test300_920_ShouldRaiseExceptionTemperatureNonInt(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setHeight('a')
-        self.assertEquals(cxt.exception.args[0], self.strHeightError)
-
-    def test200_930_ShouldRaiseExceptionHeightLow(self):
+            ss.setTemperature(98.6)
+        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+    def test300_930_ShouldRaiseExceptionTemperatureNotNumber(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setHeight(-0.1)
-        self.assertEquals(cxt.exception.args[0], self.strHeightError)
+            ss.setTemperature('a')
+        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+    def test300_940_ShouldRaiseExceptionTemperatureLow(self):
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setTemperature(-21)
+        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+    def test300_950_ShouldRaiseExceptionTemperatureHigh(self):
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setTemperature(121)
+        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
 # ---- Unit tests
 # ----
