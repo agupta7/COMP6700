@@ -26,7 +26,7 @@ def dispatch(values=None):
         return values
 
 def dispatchAdjust(values):
-    if values['observation'] is None:
+    if 'obervation' not in values:
         values['error'] = 'mandatory information is missing'
 
     try:
@@ -35,28 +35,28 @@ def dispatchAdjust(values):
         values['error'] = 'observation is invalid'
         return values
 
-    if values['height'] != None:
+    if 'height' in values:
         try:
             ss.setHeight(float(values['height']))
         except Exception:
             values['error'] = 'height is invalid'
             return values
 
-    if values['temperature'] != None:
+    if 'temperature' in values:
         try:
             ss.setTemperature(int(values['temperature']))
         except Exception:
             values['error'] = 'temperature is invalid'
             return values
 
-    if values['pressure'] != None:
+    if 'pressure' in values:
         try:
             ss.setPressure(int(values['pressure']))
         except Exception:
             values['error'] = 'pressure is invalid'
             return values
 
-    if values['horizon'] != None:
+    if 'horizon' in values:
         try:
             ss.setHorizon(values['horizon'])
         except Exception:
@@ -65,6 +65,3 @@ def dispatchAdjust(values):
 
     values['altitude'] = ss.getAltitude()
     return values
-
-
-dispatch({'op': 'adjust', 'observation': '7d13.3'})
