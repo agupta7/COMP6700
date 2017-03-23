@@ -321,23 +321,23 @@ class StarSightingTest(unittest.TestCase):
 
     def test600_910_ShouldRaiseExceptionDegreeMissing(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting(None)
+            SS.StarSighting.fromDegreeMinString(None)
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_920_ShouldRaiseExceptionDegreeBlank(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting('')
+            SS.StarSighting.fromDegreeMinString('')
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_930_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting(23)
+            SS.StarSighting.fromDegreeMinString(23)
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_940_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting('11d')
+            SS.StarSighting.fromDegreeMinString('11d')
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_950_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting('11d44m')
+            SS.StarSighting.fromDegreeMinString('11d44m')
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_960_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:

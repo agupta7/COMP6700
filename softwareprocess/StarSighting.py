@@ -92,7 +92,9 @@ class StarSighting(object):
             degrees = int(pieces[0])
             minutes = float(pieces[1])
         except ValueError as er:
-            
+            raise ValueError(strDegreesMinutesFormatError)
+
+        return StarSighting(degrees, minutes)
 
     def getAngle(self):
         return self.getDegrees() + self.getMinutes() / 60
