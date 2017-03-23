@@ -286,5 +286,20 @@ class StarSightingTest(unittest.TestCase):
         with self.assertRaises(ValueError) as cxt:
             ss.setHorizon('')
         self.assertEquals(cxt.exception.args[0], self.strHorizonError)
-# ---- Unit tests
-# ----
+# ----600 fromDegreeMinString
+# ---- Boundary value confidence required
+#   inputs :    string -> '##d#.#' format -> where the first part is degrees and the second part is minutes
+#   outputs : instance of Star Sighting
+# ---Happy path analysis
+#           str = '50d50' -> nominal value
+#           str = '89d59.9' -> boundary value high bound
+#           str = '0d0' -> boundary value low bound
+# ---- Sad path analysis
+#           str is None
+#           str is ''
+#           str is not a string
+#           str is in a different format '11d'
+#           str is in a different format '11d44m'
+    def test600_010_ShouldConstructNominalObservation(self):
+        ss = SS.StarSighting.fromDegreeMinString('50d50')
+        self.assertEquals(ss.getDegrees(), 50)

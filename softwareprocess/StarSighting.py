@@ -64,10 +64,23 @@ class StarSighting(object):
         strHorizonError = "Horizon should be 'artificial' or 'natural'"
         if not isinstance(horizon, (str, basestring)) or (horizon.lower() != 'natural' and horizon.lower() != 'artificial'):
             raise ValueError(strHorizonError)
-        
+
         if horizon.lower() == 'natural':
             self._horizonNaturalArtificial = 0
         else:
             self._horizonNaturalArtificial = 1
 
         return self
+
+    def getHorizon(self):
+        if self._horizonNaturalArtificial == 0:
+            return 'natural'
+        else:
+            return 'artificial'
+
+    @classmethod
+    def fromDegreeMinString(cls, degStr):
+        pass
+
+    def getAngle(self):
+        return self.getDegrees() + self.getMinutes() / 60
