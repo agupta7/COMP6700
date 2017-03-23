@@ -76,5 +76,9 @@ class StarSightingTest(unittest.TestCase):
         with self.assertRaises(ValueError) as cxt:
             ss = SS.StarSighting(-1, 30.0)
         self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
+    def test100_840_ShouldRaiseExceptionDegreesHigh(self):
+        with self.assertRaises(ValueError) as cxt:
+            ss = SS.StarSighting(90, 30.0)
+        self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
 # ---- Unit tests
 # ----
