@@ -9,6 +9,7 @@ class StarSightingTest(unittest.TestCase):
         self.strTemperatureError = "Temperature should be an integer >= -20 & <= 120 in Farenheit"
         self.strPressureError = "Pressure should be an integer >= 100 & <= 1100 in millibars"
         self.strHorizonError = "Horizon should be 'artificial' or 'natural'"
+        self.strDegreesMinutesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
 
     def tearDown(self):
         pass
@@ -300,6 +301,49 @@ class StarSightingTest(unittest.TestCase):
 #           str is not a string
 #           str is in a different format '11d'
 #           str is in a different format '11d44m'
+#           str is out of bounds = '90d40'
+#           str is out of bounds = '10d60'
     def test600_010_ShouldConstructNominalObservation(self):
         ss = SS.StarSighting.fromDegreeMinString('50d50')
+        self.assertIsInstance(ss, SS.StarSighting)
         self.assertEquals(ss.getDegrees(), 50)
+        self.assertEquals(ss.getMinutes(), 50)
+    def test600_020_ShouldConstructHighObservation(self):
+        ss = SS.StarSighting.fromDegreeMinString('89d59.9')
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 89)
+        self.assertEquals(ss.getMinutes(), 59.9)
+    def test600_030_ShouldConstructLowObservation(self):
+        ss = SS.StarSighting.fromDegreeMinString('0d0')
+        self.assertIsInstance(ss, SS.StarSighting)
+        self.assertEquals(ss.getDegrees(), 0)
+        self.assertEquals(ss.getMinutes(), 0)
+
+    def test600_910_ShouldRaiseExceptionDegreeMissing(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting(None)
+        self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
+    def test600_920_ShouldRaiseExceptionDegreeBlank(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting('')
+        self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
+    def test600_930_ShouldRaiseExceptionNotString(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting(23)
+        self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
+    def test600_940_ShouldRaiseExceptionNotString(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting('11d')
+        self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
+    def test600_950_ShouldRaiseExceptionNotString(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting('11d44m')
+        self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
+    def test600_960_ShouldRaiseExceptionNotString(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting('90d40')
+        self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
+    def test600_970_ShouldRaiseExceptionNotString(self):
+        with self.assertRaises(ValueError) as cxt:
+            SS.StarSighting('10d60')
+        self.assertEquals(cxt.exception.args[0], self.strMinutesBound)

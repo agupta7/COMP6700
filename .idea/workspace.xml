@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/softwareprocess/sandbox.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/StarSighting.py" afterPath="$PROJECT_DIR$/softwareprocess/StarSighting.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/StarSightingTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/StarSightingTest.py" />
     </list>
@@ -34,27 +34,27 @@
       <file leaf-file-name="StarSightingTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/softwareprocess/test/StarSightingTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="304" column="46" lean-forward="false" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
+            <state relative-caret-position="165">
+              <caret line="11" column="128" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="128" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#1874#2051#0" expanded="false" />
-                <element signature="e#2113#2288#0" expanded="false" />
-                <element signature="e#2351#2528#0" expanded="false" />
-                <element signature="e#2590#2765#0" expanded="false" />
-                <element signature="e#2828#3005#0" expanded="false" />
-                <element signature="e#3076#3234#0" expanded="false" />
-                <element signature="e#3302#3460#0" expanded="false" />
-                <element signature="e#3533#3690#0" expanded="false" />
-                <element signature="e#3757#3913#0" expanded="false" />
-                <element signature="e#3981#4137#0" expanded="false" />
-                <element signature="e#4211#4366#0" expanded="false" />
-                <element signature="e#4434#4590#0" expanded="false" />
-                <element signature="e#4657#4813#0" expanded="false" />
-                <element signature="e#5539#5642#0" expanded="false" />
-                <element signature="e#5697#5798#0" expanded="false" />
-                <element signature="e#5866#6048#0" expanded="false" />
-                <element signature="e#6120#6301#0" expanded="false" />
+                <element signature="e#2003#2180#0" expanded="false" />
+                <element signature="e#2242#2417#0" expanded="false" />
+                <element signature="e#2480#2657#0" expanded="false" />
+                <element signature="e#2719#2894#0" expanded="false" />
+                <element signature="e#2957#3134#0" expanded="false" />
+                <element signature="e#3205#3363#0" expanded="false" />
+                <element signature="e#3431#3589#0" expanded="false" />
+                <element signature="e#3662#3819#0" expanded="false" />
+                <element signature="e#3886#4042#0" expanded="false" />
+                <element signature="e#4110#4266#0" expanded="false" />
+                <element signature="e#4340#4495#0" expanded="false" />
+                <element signature="e#4563#4719#0" expanded="false" />
+                <element signature="e#4786#4942#0" expanded="false" />
+                <element signature="e#5668#5771#0" expanded="false" />
+                <element signature="e#5826#5927#0" expanded="false" />
+                <element signature="e#5995#6177#0" expanded="false" />
+                <element signature="e#6249#6430#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="StarSighting.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/softwareprocess/StarSighting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="57" column="41" lean-forward="true" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="752">
+              <caret line="94" column="12" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -469,9 +469,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.03.22 at 20h 17m 15s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.03.22 at 20h 17m 39s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
@@ -497,6 +494,9 @@
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.03.22 at 20h 52m 31s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.03.22 at 21h 13m 26s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
   </component>
@@ -898,35 +898,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/test/StarSightingTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="304" column="46" lean-forward="false" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
+        <state relative-caret-position="165">
+          <caret line="11" column="128" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="128" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#1874#2051#0" expanded="false" />
-            <element signature="e#2113#2288#0" expanded="false" />
-            <element signature="e#2351#2528#0" expanded="false" />
-            <element signature="e#2590#2765#0" expanded="false" />
-            <element signature="e#2828#3005#0" expanded="false" />
-            <element signature="e#3076#3234#0" expanded="false" />
-            <element signature="e#3302#3460#0" expanded="false" />
-            <element signature="e#3533#3690#0" expanded="false" />
-            <element signature="e#3757#3913#0" expanded="false" />
-            <element signature="e#3981#4137#0" expanded="false" />
-            <element signature="e#4211#4366#0" expanded="false" />
-            <element signature="e#4434#4590#0" expanded="false" />
-            <element signature="e#4657#4813#0" expanded="false" />
-            <element signature="e#5539#5642#0" expanded="false" />
-            <element signature="e#5697#5798#0" expanded="false" />
-            <element signature="e#5866#6048#0" expanded="false" />
-            <element signature="e#6120#6301#0" expanded="false" />
+            <element signature="e#2003#2180#0" expanded="false" />
+            <element signature="e#2242#2417#0" expanded="false" />
+            <element signature="e#2480#2657#0" expanded="false" />
+            <element signature="e#2719#2894#0" expanded="false" />
+            <element signature="e#2957#3134#0" expanded="false" />
+            <element signature="e#3205#3363#0" expanded="false" />
+            <element signature="e#3431#3589#0" expanded="false" />
+            <element signature="e#3662#3819#0" expanded="false" />
+            <element signature="e#3886#4042#0" expanded="false" />
+            <element signature="e#4110#4266#0" expanded="false" />
+            <element signature="e#4340#4495#0" expanded="false" />
+            <element signature="e#4563#4719#0" expanded="false" />
+            <element signature="e#4786#4942#0" expanded="false" />
+            <element signature="e#5668#5771#0" expanded="false" />
+            <element signature="e#5826#5927#0" expanded="false" />
+            <element signature="e#5995#6177#0" expanded="false" />
+            <element signature="e#6249#6430#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/StarSighting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="57" column="41" lean-forward="true" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="752">
+          <caret line="94" column="12" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
           <folding />
         </state>
       </provider>

@@ -80,7 +80,19 @@ class StarSighting(object):
 
     @classmethod
     def fromDegreeMinString(cls, degStr):
-        pass
+        strDegreesMinutesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
+
+        if not isinstance(degStr, (str, basestring)):
+            raise ValueError(strDegreesMinutesFormatError)
+        pieces = degStr.split('d')
+
+        if len(pieces) != 2:
+            raise ValueError(strDegreesMinutesFormatError)
+        try:
+            degrees = int(pieces[0])
+            minutes = float(pieces[1])
+        except ValueError as er:
+            
 
     def getAngle(self):
         return self.getDegrees() + self.getMinutes() / 60
