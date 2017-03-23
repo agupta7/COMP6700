@@ -14,6 +14,7 @@ class StarSighting(object):
         if not isinstance(minutes, (int, long, float)):
             raise ValueError(strMinutesBound)
 
+
         self._degrees = degrees
         self._minutes = minutes
 

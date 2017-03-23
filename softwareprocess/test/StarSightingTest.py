@@ -85,5 +85,9 @@ class StarSightingTest(unittest.TestCase):
         with self.assertRaises(ValueError) as cxt:
             ss = SS.StarSighting(20, 'a')
         self.assertEquals(cxt.exception.args[0], self.strMinutesBound)
+    def test100_910_ShouldRaiseExceptionNonNullMinutes(self):
+        with self.assertRaises(ValueError) as cxt:
+            ss = SS.StarSighting(20, None)
+        self.assertEquals(cxt.exception.args[0], self.strMinutesBound)
 # ---- Unit tests
 # ----
