@@ -64,5 +64,10 @@ class StarSightingTest(unittest.TestCase):
         self.assertIsInstance(ss, SS.StarSighting)
         self.assertEquals(ss.getDegrees(), 20)
         self.assertEquals(ss.getMinutes(), 59.9)
+
+    def test100_810_ShouldRaiseExceptionNonIntDegrees(self):
+        with self.assertRaises(ValueError) as cxt:
+            ss = SS.StarSighting(20.5, 30.0)
+        self.assertEquals(cxt.exception.args[0], "Degrees should be an integer >= 0 and < 90.")
 # ---- Unit tests
 # ----
