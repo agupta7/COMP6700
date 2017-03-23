@@ -151,7 +151,7 @@ class StarSightingTest(unittest.TestCase):
 # ----Sad path analysis
 #           height :   None temperature
 #                       non-int temperature -> 98.6
-#                      wrong height type = 'a'
+#                      wrong temperature type = 'a'
 #                      temperature too low = -21
 #                      temperature too high = 121
 #
@@ -194,64 +194,64 @@ class StarSightingTest(unittest.TestCase):
             ss.setTemperature(121)
         self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
 
-# ----300 setTemperature
+# ----400 setPressure
 # ----Boundary value confidence required
-#   inputs :        temperature in farenheit ->     integer >= -20 & <= 120    mandatory, unvalidated
+#   inputs :        pressure in farenheit ->     integer >= 100 & <= 1100    mandatory, unvalidated
 #   outputs :    instance of star sighting
 # ----Happy path analysis
-#           temperature -> nominal value = 70;
-#           temperature -> low value = -20;
-#           temperature -> high value = 120;
+#           pressure -> nominal value = 700;
+#           pressure -> low value = 100;
+#           pressure -> high value = 1100;
 # ----Sad path analysis
-#           height :   None temperature
-#                       non-int temperature -> 98.6
-#                      wrong height type = 'a'
-#                      temperature too low = -21
-#                      temperature too high = 121
+#           height :   None pressure
+#                       non-int pressure-> 198.6
+#                      wrong pressure type = 'a'
+#                      pressure too low = 99
+#                      pressure too high = 1101
 #
-    def test300_010_ShouldSetTemperatureNominal(self):
+    def test400_010_ShouldSetPressureNominal(self):
         ss = SS.StarSighting(20, 30.5)
-        ss.setTemperature(70)
-        self.assertEquals(ss.getTemperature(), 70)
+        ss.setPressure(700)
+        self.assertEquals(ss.getPressure(), 700)
 
-    def test300_020_ShouldSetTemperatureLow(self):
+    def test400_020_ShouldSetPressureLow(self):
         ss = SS.StarSighting(20, 30.5)
-        ss.setTemperature(-20)
-        self.assertEquals(ss.getTemperature(), -20)
+        ss.setPressure(100)
+        self.assertEquals(ss.getPressure(), 100)
 
-    def test300_030_ShouldSetTemperatureHigh(self):
+    def test400_030_ShouldSetPressureHigh(self):
         ss = SS.StarSighting(20, 30.5)
-        ss.setTemperature(120)
-        self.assertEquals(ss.getTemperature(), 120)
+        ss.setPressure(1100)
+        self.assertEquals(ss.getPressure(), 1100)
 
-    def test300_910_ShouldRaiseExceptionTemperatureNull(self):
+    def test400_910_ShouldRaiseExceptionPressureNull(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setTemperature(None)
-        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+            ss.setPressure(None)
+        self.assertEquals(cxt.exception.args[0], self.strPressureError)
 
-    def test300_920_ShouldRaiseExceptionTemperatureNonInt(self):
+    def test400_920_ShouldRaiseExceptionPressureNonInt(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setTemperature(98.6)
-        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+            ss.setPressure(198.6)
+        self.assertEquals(cxt.exception.args[0], self.strPressureError)
 
-    def test300_930_ShouldRaiseExceptionTemperatureNotNumber(self):
+    def test400_930_ShouldRaiseExceptionPressureNotNumber(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setTemperature('a')
-        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+            ss.setPressure('a')
+        self.assertEquals(cxt.exception.args[0], self.strPressureError)
 
-    def test300_940_ShouldRaiseExceptionTemperatureLow(self):
+    def test400_940_ShouldRaiseExceptionPressureLow(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setTemperature(-21)
-        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+            ss.setPressure(99)
+        self.assertEquals(cxt.exception.args[0], self.strPressureError)
 
-    def test300_950_ShouldRaiseExceptionTemperatureHigh(self):
+    def test400_950_ShouldRaiseExceptionPressureHigh(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
-            ss.setTemperature(121)
-        self.assertEquals(cxt.exception.args[0], self.strTemperatureError)
+            ss.setPressure(1101)
+        self.assertEquals(cxt.exception.args[0], self.strPressureError)
 # ---- Unit tests
 # ----
