@@ -49,3 +49,13 @@ class StarSighting(object):
         return self._temperatureF
     def getTemperatureKelvin(self):
         return 273 + (self._temperatureF - 32) * 5/9
+
+    def setPressure(self, pressure):
+        strPressureError = "Pressure should be an integer >= 100 & <= 1100 in millibars"
+        if not isinstance(pressure, (int, long)) or pressure < 100 or pressure > 1100
+            raise ValueError(strPressureError)
+
+        self._pressureMillibar = pressure
+        return self
+    def getPressure(self):
+        return self._pressureMillibar
