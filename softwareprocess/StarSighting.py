@@ -101,9 +101,10 @@ class StarSighting(object):
 
     def getAltitude(self):
         altitude = float(self._calculateAltitude())
-        formatted = str(int(altitude)) + 'd'
         minutes = (altitude % 1) * 60
-        formatted += str(round(minutes, 1))
+
+        formatted = str(int(altitude)) + 'd' + str(round(minutes, 1))
+        return formatted
 
     def _calculateAltitude(self):
         dip = 0
