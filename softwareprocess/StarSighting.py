@@ -15,7 +15,7 @@ class StarSighting(object):
             raise ValueError(strMinutesBound)
         elif minutes < 0:
             raise ValueError(strMinutesBound)
-        else minutes >= 60:
+        elif minutes >= 60:
             raise ValueError(strMinutesBound)
 
         self._degrees = degrees
