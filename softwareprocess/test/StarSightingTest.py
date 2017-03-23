@@ -3,8 +3,7 @@ import softwareprocess.StarSighting as SS
 
 class StarSightingTest(unittest.TestCase):
     def setUp(self):
-        super(StarSightingTest, self).setUp()
-        pass
+        self.strDegreesBound = "Degrees should be an integer >= 0 and < 90."
 
     def tearDown(self):
         super(StarSightingTest, self).tearDown()
@@ -68,6 +67,11 @@ class StarSightingTest(unittest.TestCase):
     def test100_810_ShouldRaiseExceptionNonIntDegrees(self):
         with self.assertRaises(ValueError) as cxt:
             ss = SS.StarSighting(20.5, 30.0)
-        self.assertEquals(cxt.exception.args[0], "Degrees should be an integer >= 0 and < 90.")
+        self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
+
+    def test100_810_ShouldRaiseExceptionNullDegrees(self):
+        with self.assertRaises(ValueError) as cxt:
+            ss = SS.StarSighting(None, 30.0)
+        self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
 # ---- Unit tests
 # ----
