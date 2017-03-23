@@ -341,9 +341,14 @@ class StarSightingTest(unittest.TestCase):
         self.assertEquals(cxt.exception.args[0], self.strDegreesMinutesFormatError)
     def test600_960_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting('90d40')
+            SS.StarSighting.fromDegreeMinString('90d40')
         self.assertEquals(cxt.exception.args[0], self.strDegreesBound)
     def test600_970_ShouldRaiseExceptionNotString(self):
         with self.assertRaises(ValueError) as cxt:
-            SS.StarSighting('10d60')
+            SS.StarSighting.fromDegreeMinString('10d60')
         self.assertEquals(cxt.exception.args[0], self.strMinutesBound)
+
+# ----700 getAltitude
+# ---- Basic calculation confidence required
+#   inputs :    none.  gets parameters from instance variables
+#   outputs :   string in the format xddyy.y where x is the degree of the corrected altitude yy.y is the minutes
