@@ -352,3 +352,29 @@ class StarSightingTest(unittest.TestCase):
 # ---- Basic calculation confidence required
 #   inputs :    none.  gets parameters from instance variables
 #   outputs :   string in the format xddyy.y where x is the degree of the corrected altitude yy.y is the minutes
+#--- Happy path analysis
+#       degrees = 42, minutes = 0; other defaults -> '41d59.0'
+#       degrees = 42, minutes = 0; height = 50; other defaults -> '41d52.1'
+#       degrees = 42, minutes = 0; height = 60; temperature = 80; other defaults -> '41d51.5'
+#       degrees = 42, minutes = 0; height = 60; temperature = 80; pressure = 900; other defaults -> '41d51.6'
+#       degrees = 42, minutes = 0; height = 60; temperature = 80; pressure = 900; horizon = 'artificial' -> '41d59.1'
+#--- Sad path analysis -> none since it uses validated field variables
+    def test700_010_getAltitudeObservation(self):
+        ss = SS.StarSighting(42, 0)
+        self.assertEquals(ss.getAltitude(), '41d59.0')
+    def test700_020_getAltitudeObservation(self):
+        ss = SS.StarSighting(42, 0)
+        ss.setHeight(50)
+        self.assertEquals(ss.getAltitude(), '41d52.1')
+    def test700_030_getAltitudeObservation(self):
+        ss = SS.StarSighting(42, 0)
+        ss.setHeight(50).setTemperature(80)
+        self.assertEquals(ss.getAltitude(), '41d51.5')
+    def test700_040_getAltitudeObservation(self):
+        ss = SS.StarSighting(42, 0)
+        ss.setHeight(50).setTemperature(80).setPressure(900)
+        self.assertEquals(ss.getAltitude(), '41d51.6')
+    def test700_050_getAltitudeObservation(self):
+        ss = SS.StarSighting(42, 0)
+        ss.setHeight(50).setTemperature(80).setPressure(900).setHorizon('artificial')
+        self.assertEquals(ss.getAltitude(), '41d59.1')

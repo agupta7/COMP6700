@@ -98,3 +98,19 @@ class StarSighting(object):
 
     def getAngle(self):
         return self.getDegrees() + self.getMinutes() / 60
+
+    def getAltitude(self):
+        altitude = float(self._calculateAltitude())
+        formatted = str(int(altitude)) + 'd'
+        minutes = (altitude % 1) * 60
+        formatted += str(round(minutes, 1))
+
+    def _calculateAltitude(self):
+        dip = 0
+        if self._horizonNaturalArtificial == 0:
+            dip = -0.97 * math.sqrt(self.getHeight()) / 60
+
+        deg = self.getDegrees() + self.getMinutes() / 60
+        refraction = -0.00452 * self.getPressure() / self.getTemperatureKelvin() / math.tan(deg * math.pi / 180)
+        altitude = deg + dip + refraction
+        return altitude
