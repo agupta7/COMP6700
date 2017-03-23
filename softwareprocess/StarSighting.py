@@ -27,6 +27,14 @@ class StarSighting(object):
 
     def getDegrees(self):
         return self._degrees
-
     def getMinutes(self):
         return self._minutes
+    def setHeight(self, height):
+        strHeightError = "Height should be a number >= 0.0"
+        if not isinstance(height, (int, long, float)) or height < 0:
+            raise ValueError(strHeightError)
+
+        self._heightFt = height
+        return self
+    def getHeight(self):
+        return self._heightFt
