@@ -21,7 +21,7 @@ class StarSighting(object):
         self._degrees = degrees
         self._minutes = minutes
         self._heightFt = 0
-        self._temperatureK = 273 + (72 - 32) * 5/9
+        self._temperatureF = 72
         self._pressureMillibar = 1010
         self._horizonNaturalArtificial = 0
 
@@ -38,3 +38,14 @@ class StarSighting(object):
         return self
     def getHeight(self):
         return self._heightFt
+    def setTemperature(self, temperature):
+        strTemperatureError = "Temperature should be an integer >= -20 & <= 120 in Farenheit"
+        if not isinstance(temperature, (int, long)) or temperature < 20 or temperature > 120
+            raise ValueError(strTemperatureError)
+
+        self._temperatureF = temperature
+        return self
+    def getTemperature(self):
+        return self._temperatureF
+    def getTemperatureKelvin(self):
+        return 273 + (self._temperatureF - 32) * 5/9
