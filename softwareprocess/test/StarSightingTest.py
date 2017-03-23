@@ -5,6 +5,7 @@ class StarSightingTest(unittest.TestCase):
     def setUp(self):
         self.strDegreesBound = "Degrees should be an integer >= 0 and < 90."
         self.strMinutesBound = "Minutes should be a decimal >= 0.0 and < 60.0."
+        self.strHeightError = "Height should be a number >= 0.0"
 
     def tearDown(self):
         pass
@@ -115,5 +116,15 @@ class StarSightingTest(unittest.TestCase):
         ss = SS.StarSighting(20, 30.5)
         ss.setHeight(6.5)
         self.assertEquals(ss.getHeight(), 6.5)
+    def test200_020_ShouldSetHeightLow(self):
+        ss = SS.StarSighting(20, 30.5)
+        ss.setHeight(0.0)
+        self.assertEquals(ss.getHeight(), 0)
+
+    def test200_910_ShouldRaiseExceptionHeightNull(self):
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setHeight(None)
+        self.assertEquals(ss.getHeight(), self.strHeightError)
 # ---- Unit tests
 # ----
