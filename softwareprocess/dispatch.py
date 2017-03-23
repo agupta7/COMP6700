@@ -26,7 +26,7 @@ def dispatch(values=None):
         return values
 
 def dispatchAdjust(values):
-    if 'obervation' not in values:
+    if 'observation' not in values:
         values['error'] = 'mandatory information is missing'
         return values
 
