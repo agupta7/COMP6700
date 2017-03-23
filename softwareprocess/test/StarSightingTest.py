@@ -368,13 +368,13 @@ class StarSightingTest(unittest.TestCase):
         self.assertEquals(ss.getAltitude(), '41d52.1')
     def test700_030_getAltitudeObservation(self):
         ss = SS.StarSighting(42, 0)
-        ss.setHeight(50).setTemperature(80)
+        ss.setHeight(60).setTemperature(80)
         self.assertEquals(ss.getAltitude(), '41d51.5')
     def test700_040_getAltitudeObservation(self):
         ss = SS.StarSighting(42, 0)
-        ss.setHeight(50).setTemperature(80).setPressure(900)
+        ss.setHeight(60).setTemperature(80).setPressure(900)
         self.assertEquals(ss.getAltitude(), '41d51.6')
     def test700_050_getAltitudeObservation(self):
         ss = SS.StarSighting(42, 0)
-        ss.setHeight(50).setTemperature(80).setPressure(900).setHorizon('artificial')
+        ss.setHeight(60).setTemperature(80).setPressure(900).setHorizon('artificial')
         self.assertEquals(ss.getAltitude(), '41d59.1')

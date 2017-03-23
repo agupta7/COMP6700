@@ -11,7 +11,7 @@ def dispatch(values=None):
 
     #Perform designated function
     if(values['op'] == 'adjust'):
-        return values    #<-------------- replace this with your implementation
+        return dispatchAdjust(values)
     elif(values['op'] == 'predict'):
         return values    #This calculation is stubbed out
     elif(values['op'] == 'correct'):
@@ -21,3 +21,8 @@ def dispatch(values=None):
     else:
         values['error'] = 'op is not a legal operation'
         return values
+
+def dispatchAdjust(values):
+
+
+    return values
