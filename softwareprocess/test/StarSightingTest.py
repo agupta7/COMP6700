@@ -8,7 +8,7 @@ class StarSightingTest(unittest.TestCase):
         self.strHeightError = "Height should be a number >= 0.0"
         self.strTemperatureError = "Temperature should be an integer >= -20 & <= 120 in Farenheit"
         self.strPressureError = "Pressure should be an integer >= 100 & <= 1100 in millibars"
-        self.selfHorizonError = "Horizon should be 'artificial' or 'natural'"
+        self.strHorizonError = "Horizon should be 'artificial' or 'natural'"
 
     def tearDown(self):
         pass
@@ -265,17 +265,26 @@ class StarSightingTest(unittest.TestCase):
     def test500_010_ShouldSetHorizonNominal(self):
         ss = SS.StarSighting(20, 30.5)
         ss.setHorizon('natural')
-        self.assertEquals(ss.getHorizon(), 'natural')
+        self.assertEquals(ss.getHorizon().lower(), 'natural')
     def test500_020_ShouldSetHorizonNominal(self):
         ss = SS.StarSighting(20, 30.5)
         ss.setHorizon('artificial')
-        self.assertEquals(ss.getHorizon(), 'artificial')
+        self.assertEquals(ss.getHorizon().lower(), 'artificial')
 
     def test500_910_ShouldRaiseExceptionNoneHorizon(self):
-        pass
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setHorizon(None)
+        self.assertEquals(cxt.exception.args[0], self.strHorizonError)
     def test500_920_ShouldRaiseExceptionNonStringHorizon(self):
-        pass
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setHorizon(198.6)
+        self.assertEquals(cxt.exception.args[0], self.strHorizonError)
     def test500_930_ShouldRaiseExceptionInvalidHorizon(self):
-        pass
+        ss = SS.StarSighting(20, 30.5)
+        with self.assertRaises(ValueError) as cxt:
+            ss.setHorizon('')
+        self.assertEquals(cxt.exception.args[0], self.strHorizonError)
 # ---- Unit tests
 # ----
