@@ -20,6 +20,10 @@ class StarSighting(object):
 
         self._degrees = degrees
         self._minutes = minutes
+        self._heightFt = 0
+        self._temperatureK = 273 + (72 - 32) * 5/9
+        self._pressureMillibar = 1010
+        self._horizonNaturalArtificial = 0
 
     def getDegrees(self):
         return self._degrees

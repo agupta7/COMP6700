@@ -97,5 +97,23 @@ class StarSightingTest(unittest.TestCase):
         with self.assertRaises(ValueError) as cxt:
             ss = SS.StarSighting(20, 60)
         self.assertEquals(cxt.exception.args[0], self.strMinutesBound)
+
+
+# ----200 setHeight
+# ----Boundary value confidence required
+#   inputs :        height in ft ->     numeric >= 0    mandatory, unvalidated
+#   outputs :    instance of star sighting
+# ----Happy path analysis
+#           height -> nominal value = 6.5;
+#           height -> low value = 0;
+# ----Sad path analysis
+#           height :   None height
+#                      wrong height type = 'a'
+#                      degrees too low = -1
+#
+    def test200_010_ShouldSetHeightNominal(self):
+        ss = SS.StarSighting(20, 30.5)
+        ss.setHeight(6.5)
+        self.assertEquals(ss.getHeight(), 6.5)
 # ---- Unit tests
 # ----
