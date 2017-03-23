@@ -40,7 +40,7 @@ class StarSighting(object):
         return self._heightFt
     def setTemperature(self, temperature):
         strTemperatureError = "Temperature should be an integer >= -20 & <= 120 in Farenheit"
-        if not isinstance(temperature, (int, long)) or temperature < 20 or temperature > 120:
+        if not isinstance(temperature, (int, long)) or temperature < -20 or temperature > 120:
             raise ValueError(strTemperatureError)
 
         self._temperatureF = temperature
