@@ -7,6 +7,8 @@ class StarSighting(object):
             raise ValueError(strDegreesBound)
         elif degrees < 0:
             raise ValueError(strDegreesBound)
+        elif degrees >= 90:
+            raise ValueError(strDegreesBound)
 
         self._degrees = degrees
         self._minutes = minutes
