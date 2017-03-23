@@ -59,3 +59,15 @@ class StarSighting(object):
         return self
     def getPressure(self):
         return self._pressureMillibar
+
+    def setHorizon(self, horizon):
+        strHorizonError = "Horizon should be 'artificial' or 'natural'"
+        if not isinstance(horizon, (str, basestring)) or (horizon.lower() != 'natural' and horizon.lower() != 'artificial'):
+            raise ValueError(strHorizonError)
+        
+        if horizon.lower() == 'natural':
+            self._horizonNaturalArtificial = 0
+        else:
+            self._horizonNaturalArtificial = 1
+
+        return self
