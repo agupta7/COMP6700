@@ -125,6 +125,6 @@ class StarSightingTest(unittest.TestCase):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
             ss.setHeight(None)
-        self.assertEquals(ss.getHeight(), self.strHeightError)
+        self.assertEquals(cxt.exception.args[0], self.strHeightError)
 # ---- Unit tests
 # ----
