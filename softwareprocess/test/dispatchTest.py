@@ -29,7 +29,7 @@ class DispatchTest(unittest.TestCase):
         self.assertEquals(dict['error'], 'no op  is specified')
     def test100_020_DispatchNoDict(self):
         dict = dispatch.dispatch(12)
-        self.assertEquals(dict['error'], 'parameter is missing')
+        self.assertEquals(dict['error'], 'parameter is not a dictionary')
     def test100_940_DispatchNone(self):
         dict = dispatch.dispatch(None)
-        self.assertEquals(dict['error'], 'parameter is not a dictionary')
+        self.assertEquals(dict['error'], 'parameter is missing')
