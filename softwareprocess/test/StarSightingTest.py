@@ -213,12 +213,10 @@ class StarSightingTest(unittest.TestCase):
         ss = SS.StarSighting(20, 30.5)
         ss.setPressure(700)
         self.assertEquals(ss.getPressure(), 700)
-
     def test400_020_ShouldSetPressureLow(self):
         ss = SS.StarSighting(20, 30.5)
         ss.setPressure(100)
         self.assertEquals(ss.getPressure(), 100)
-
     def test400_030_ShouldSetPressureHigh(self):
         ss = SS.StarSighting(20, 30.5)
         ss.setPressure(1100)
@@ -229,29 +227,55 @@ class StarSightingTest(unittest.TestCase):
         with self.assertRaises(ValueError) as cxt:
             ss.setPressure(None)
         self.assertEquals(cxt.exception.args[0], self.strPressureError)
-
     def test400_920_ShouldRaiseExceptionPressureNonInt(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
             ss.setPressure(198.6)
         self.assertEquals(cxt.exception.args[0], self.strPressureError)
-
     def test400_930_ShouldRaiseExceptionPressureNotNumber(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
             ss.setPressure('a')
         self.assertEquals(cxt.exception.args[0], self.strPressureError)
-
     def test400_940_ShouldRaiseExceptionPressureLow(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
             ss.setPressure(99)
         self.assertEquals(cxt.exception.args[0], self.strPressureError)
-
     def test400_950_ShouldRaiseExceptionPressureHigh(self):
         ss = SS.StarSighting(20, 30.5)
         with self.assertRaises(ValueError) as cxt:
             ss.setPressure(1101)
         self.assertEquals(cxt.exception.args[0], self.strPressureError)
+
+
+# ----500 setHorizon
+# ----Boundary value confidence required
+#   inputs :        horizon as string  ->  'natural' or 'artificial'- nothing else accepted
+#   outputs :    instance of star sighting
+# ----Happy path analysis
+#           horizon -> nominal value = 'natural';
+#           horizon -> boundary value = 'artificial';
+# ----Sad path analysis
+#           horizon:   None horizon
+#                       non-str horizon-> 198.6
+#                      any other string -> ''
+#
+
+    def test500_010_ShouldSetHorizonNominal(self):
+        ss = SS.StarSighting(20, 30.5)
+        ss.setHorizon('natural')
+        self.assertEquals(ss.getHorizon(), 'natural')
+    def test500_020_ShouldSetHorizonNominal(self):
+        ss = SS.StarSighting(20, 30.5)
+        ss.setHorizon('artificial')
+        self.assertEquals(ss.getHorizon(), 'artificial')
+
+    def test500_910_ShouldRaiseExceptionNoneHorizon(self):
+        pass
+    def test500_920_ShouldRaiseExceptionNonStringHorizon(self):
+        pass
+    def test500_930_ShouldRaiseExceptionInvalidHorizon(self):
+        pass
 # ---- Unit tests
 # ----

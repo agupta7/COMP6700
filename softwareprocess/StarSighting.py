@@ -52,7 +52,7 @@ class StarSighting(object):
 
     def setPressure(self, pressure):
         strPressureError = "Pressure should be an integer >= 100 & <= 1100 in millibars"
-        if not isinstance(pressure, (int, long)) or pressure < 100 or pressure > 1100
+        if not isinstance(pressure, (int, long)) or pressure < 100 or pressure > 1100:
             raise ValueError(strPressureError)
 
         self._pressureMillibar = pressure
