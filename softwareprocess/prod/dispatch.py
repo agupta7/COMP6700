@@ -72,4 +72,4 @@ def dispatchAdjust(values):
     return values
 
 def dispatchPredict(values):
-    pass
+    return values
