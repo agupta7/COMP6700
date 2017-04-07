@@ -1,5 +1,7 @@
 import unittest
-import softwareprocess.dispatch as dispatch
+
+import softwareprocess.prod.dispatch as dispatch
+
 
 class DispatchTest(unittest.TestCase):
 
