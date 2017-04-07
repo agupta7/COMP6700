@@ -27,4 +27,7 @@ class AngleTest(unittest.TestCase):
 #       degreeMinutesStr -> '12d12.0m' minutes in the wrong format
 
     def test100_010_ShouldConstructAngle(self):
-        pass
+        angle = A.Angle('50d30.9')
+        self.assertIsInstance(angle, A.Angle)
+        self.assertEquals(angle.getDegrees(), 50)
+        self.assertEquals(angle.getMinutes(), 30.9)
