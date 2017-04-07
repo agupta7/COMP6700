@@ -1,3 +1,7 @@
-import softwareprocess.StarSighting as SS
+import pkg_resources
 
-SS.StarSighting.fromDegreeMinString('')
+resource_package = __name__
+
+str = pkg_resources.resource_string(resource_package, 'starLocations.cfg')
+
+print str

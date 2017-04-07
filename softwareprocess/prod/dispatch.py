@@ -16,7 +16,8 @@ def dispatch(values=None):
         val = dispatchAdjust(values)
         return val
     elif(values['op'] == 'predict'):
-        return values    #This calculation is stubbed out
+        val = dispatchPredict(values)
+        return val
     elif(values['op'] == 'correct'):
         return values    #This calculation is stubbed out
     elif(values['op'] == 'locate'):
@@ -28,6 +29,9 @@ def dispatch(values=None):
 def dispatchAdjust(values):
     if 'observation' not in values:
         values['error'] = 'mandatory information is missing'
+        return values
+    if 'altitude' in values:
+        values['error'] = 'altitude should not be present in input'
         return values
 
     try:
@@ -66,3 +70,6 @@ def dispatchAdjust(values):
 
     values['altitude'] = ss.getAltitude()
     return values
+
+def dispatchPredict(values):
+    pass
