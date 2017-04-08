@@ -1,5 +1,6 @@
 import pkg_resources
 from softwareprocess.Angle import Angle
+import datetime
 
 class NavigableStar:
     def __init__(self, starName):
@@ -11,7 +12,10 @@ class NavigableStar:
         if not config.has_key(starName.lower()):
             raise ValueError(strStarInvalid)
         self._sha = Angle(config[starName.lower()].get('sha'))
-        self._declination = Angle[starName.lower()].get('declination')
+        self._declination = Angle(config[starName.lower()].get('declination'))
+
+    def predict(self, dateTime):
+        observationDateTime =
 
     @classmethod
     def getConfiguration(cls):

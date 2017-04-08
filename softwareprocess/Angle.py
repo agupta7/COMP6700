@@ -57,7 +57,8 @@ class Angle:
 
     def getDegreeMinuteString(self):
         strOut = str(self.getDegrees()) + "d"
-        min = self.getMintues()
-        min_frac = int(min) - min
+        min = self.getMinutes()
+        min_frac = min - int(min)
         strOut += format(int(min), '02')
         strOut += "{:.1f}".format(min_frac).lstrip('0')
+        return strOut

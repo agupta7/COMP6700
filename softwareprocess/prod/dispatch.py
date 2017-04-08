@@ -1,4 +1,6 @@
 import softwareprocess.StarSighting as SS
+from softwareprocess.NavigableStar import NavigableStar
+from softwareprocess.Angle import Angle
 
 def dispatch(values=None):
 
@@ -72,4 +74,43 @@ def dispatchAdjust(values):
     return values
 
 def dispatchPredict(values):
+    if 'body' not in values:
+        values['error'] = 'The name of the star is mandatory as the key body'
+        return values
+    if 'lat' in values or 'long' in values:
+        values['error'] = "The keys 'lat' or 'long' should not be present in the input."
+        return values
+
+    if not isinstance(values['body'], (str, basestring)):
+        values['error'] = "The value for the key 'body' should be a string."
+        return values
+    if 'date' in values and not isinstance(values['date'], (str, basestring)):
+        values['error'] = "The value for the key 'date' should be a string."
+        return values
+    if 'time' in values and not isinstance(values['time'], (str, basestring)):
+        values['error'] = "The value for the key 'time' should be a string."
+        return values
+
+    try:
+        star = NavigableStar(values['body'])
+    except:
+        values['error'] = "Please specify a valid navigable star in string insensitive format in the key 'body'."
+        return values
+
+    datetimeStr = "2001-01-01"
+    if 'date' in values:
+        dateTimeStr = values['date']
+
+    if 'time' in values:
+        dateTimeStr += " " + values['time']
+    else:
+        dateTimeStr += " 00:00:00"
+    try:
+        latlong = star.predict(dateTimeStr)
+    except:
+        values['error'] = "The key 'date' should be in the format yyyy-mm-dd and the key 'time' should be in the 24-hr format HH:MM:SS."
+        return values
+    values['lat'] = latlong.get("lat")
+    values['long'] = latlong.get("long")
+
     return values
