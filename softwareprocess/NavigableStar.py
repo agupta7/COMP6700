@@ -75,4 +75,3 @@ class NavigableStar:
                 starDef = {'sha': columns[1], 'declination': columns[2]}
                 starDict[starName.lower()] = starDef
         return starDict
-

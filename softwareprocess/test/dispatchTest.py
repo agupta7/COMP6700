@@ -85,3 +85,11 @@ class DispatchTest(unittest.TestCase):
     def test300_930PredictWrongTime(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:60:23'})
         self.assertIn("error", dict)
+
+    def test300_940PredictLatPresent(self):
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:30:23', 'lat': ''})
+        self.assertIn("error", dict)
+
+    def test300_950PredictLongPresent(self):
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:30:23', 'long': ''})
+        self.assertIn("error", dict)

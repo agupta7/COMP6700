@@ -36,9 +36,6 @@ class Angle:
         if not isinstance(degNum, (int, float, long)):
             raise strDegreesMinutesFormatError
         self._degreesFloat = degNum
-        # self.setDegrees(int(degNum))
-        # fraction = degNum - int(degNum)
-        # self.setMinutes(fraction * 60)
 
     def getDegreesFloat(self):
         return self._degreesFloat
