@@ -84,3 +84,8 @@ class AngleTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             angle = A.Angle('12d1')
         self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
+
+    def test900_090_ExceptionMinutesWrongFormat(self):
+        with self.assertRaises(ValueError) as ctx:
+            angle = A.Angle('12d12.0m')
+        self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)

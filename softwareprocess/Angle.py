@@ -1,26 +1,37 @@
 
 class Angle:
 
-    def __init__(self, degStr):
-        strDegreesMinutesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
+    def __init__(self, angle):
+        if isinstance(angle, (str, basestring)):
+            self.setDegreesString(angle)
+        if isinstance(angle, (int, long, float)):
+            self._constructFromNumber(float(angle))
 
-        if not isinstance(degStr, (str, basestring)):
+    def setDegreesString(self, degStr):
+        strDegreesMinutesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
+        if not isinstance(degStr, (str, basestring)) :
             raise ValueError(strDegreesMinutesFormatError)
         pieces = degStr.split('d')
 
         if len(pieces) != 2:
             raise ValueError(strDegreesMinutesFormatError)
         try:
-            degrees = int(pieces[0])
-            minutes = float(pieces[1])
             if pieces[1].index('.') < 0:
                 raise ValueError()
-            if minutes >= 60 or minutes < 0:
-                raise ValueError()
-            self._degrees = degrees
-            self._minutes = minutes
+            degrees = int(pieces[0])
+            minutes = float(pieces[1])
+
+            self.setDegrees(degrees)
+            self.setMinutes(minutes)
         except ValueError as er:
             raise ValueError(strDegreesMinutesFormatError)
+
+    def setDegreesFloat(self, degNum):
+        strDegreesMinutesFormatError = "Degrees should be a float"
+        if not isinstance(degNum, (int, float, long)):
+            raise strDegreesMinutesFormatError
+        self.setDegrees(int(degNum))
+        self.setMinutes(degNum % 1)
 
     def getDegrees(self):
         return self._degrees
@@ -35,5 +46,9 @@ class Angle:
     def setMinutes(self, minutes):
         if not isinstance((int, long, float)):
             raise ValueError("Minutes should be a float")
-
+        if minutes >= 60 or minutes < 0:
+            raise ValueError("Minutes can not be 60 or more or less than 0")
         self._minutes = minutes
+
+    def getOnlyDegrees(self):
+        pass
