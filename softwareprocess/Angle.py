@@ -60,4 +60,4 @@ class Angle:
         min = self.getMintues()
         min_frac = int(min) - min
         strOut += format(int(min), '02')
-        strOut += "{:.1f}".format(min_frac).lstrip(1)
+        strOut += "{:.1f}".format(min_frac).lstrip('0')
