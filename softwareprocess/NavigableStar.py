@@ -26,10 +26,13 @@ class NavigableStar:
         starDict = {}
         lines = cfgStr.split('\n')
         for line in lines:
-            columns = line.split('\t')
-            starName = columns[0]
-            starDef = {'sha': columns[1], 'declination': columns[2]}
-            starDict[starName.lower()] = starDef
+#            try:
+                columns = line.split('\t')
+                starName = columns[0]
+                starDef = {'sha': columns[1], 'declination': columns[2]}
+                starDict[starName.lower()] = starDef
+     #       except:
+           #     print line
         return starDict
 
 NavigableStar('Altair')
