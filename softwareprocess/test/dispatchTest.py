@@ -81,3 +81,7 @@ class DispatchTest(unittest.TestCase):
     def test300_920PredictWrongDate(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': ''})
         self.assertIn("error", dict)
+
+    def test300_930PredictWrongTime(self):
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:60:23'})
+        self.assertIn("error", dict)
