@@ -37,7 +37,7 @@ class Angle:
     def getDegrees(self):
         return self._degrees
     def setDegrees(self, degrees):
-        if not isinstance((int, long)):
+        if not isinstance(degrees, (int, long)):
             raise ValueError("Degrees should be an integer")
 
         self._degrees = degrees
