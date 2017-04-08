@@ -4,8 +4,10 @@ class Angle:
     def __init__(self, angle):
         if isinstance(angle, (str, basestring)):
             self.setDegreesString(angle)
-        if isinstance(angle, (int, long, float)):
+        elif isinstance(angle, (int, long, float)):
             self.setDegreesFloat(float(angle))
+        else:
+            raise ValueError("String should in format XdY.Y where X is degrees and Y.Y is floating point minutes")
 
     def setDegreesString(self, degStr):
         strDegreesMinutesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
