@@ -19,11 +19,14 @@ class Angle:
         try:
             if pieces[1].index('.') < 0:
                 raise ValueError()
-            degrees = int(pieces[0])
+            degrees = int(pieces[0].lstrip("-"))
             minutes = float(pieces[1])
 
-            self.setDegrees(degrees)
-            self.setMinutes(minutes)
+            degreesFloat = degrees + minutes / 60
+            "dfs".index()
+            if pieces[0].index("-") == 0:
+                degreesFloat = degreesFloat * -1
+            self.setDegreesFloat(degreesFloat)
         except ValueError as er:
             raise ValueError(strDegreesMinutesFormatError)
 
@@ -31,29 +34,21 @@ class Angle:
         strDegreesMinutesFormatError = "Degrees should be a float"
         if not isinstance(degNum, (int, float, long)):
             raise strDegreesMinutesFormatError
-        self.setDegrees(int(degNum))
-        fraction = degNum - int(degNum)
-        self.setMinutes(fraction * 60)
+        self._degreesFloat = degNum
+        # self.setDegrees(int(degNum))
+        # fraction = degNum - int(degNum)
+        # self.setMinutes(fraction * 60)
 
     def getDegrees(self):
-        return self._degrees
-    def setDegrees(self, degrees):
-        if not isinstance(degrees, (int, long)):
-            raise ValueError("Degrees should be an integer")
-
-        self._degrees = degrees
+        return int(self._degreesFloat)
 
     def getMinutes(self):
-        return self._minutes
-    def setMinutes(self, minutes):
-        if not isinstance(minutes, (int, long, float)):
-            raise ValueError("Minutes should be a float")
-        if minutes >= 60 or minutes < 0:
-            raise ValueError("Minutes can not be 60 or more or less than 0")
-        self._minutes = minutes
+        degrees = self._degreesFloat
+        minutes = (degrees - int(degrees)) * 60
+        return minutes
 
     def getDegreesFloat(self):
-        return self.getDegrees() + self.getMinutes() / 60
+        return self._degreesFloat
 
     def getDegreeMinuteString(self):
         strOut = str(self.getDegrees()) + "d"
@@ -63,3 +58,5 @@ class Angle:
         strOut += str(int(min))
         strOut += "{:.1f}".format(min_frac).lstrip('0')
         return strOut
+
+Angle('50d30.9')
