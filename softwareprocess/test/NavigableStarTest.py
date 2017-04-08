@@ -42,7 +42,7 @@ class NavigableStarTest(unittest.TestCase):
 # ----200 predict
 
     def test200_010ShouldPredict(self):
-        star = NS.NavigableStar('AlTaIr')
+        star = NS.NavigableStar('Betelgeuse')
         latlong = star.predict("2016-01-17 03:15:42")
         self.assertEquals('75d53.6', latlong['long'])
         self.assertEquals('7d24.3', latlong['lat'])
