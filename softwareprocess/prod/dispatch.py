@@ -115,4 +115,3 @@ def dispatchPredict(values):
 
     return values
 
-dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42'})
