@@ -21,6 +21,8 @@ class Angle:
                 raise ValueError()
             degrees = int(pieces[0].lstrip("-"))
             minutes = float(pieces[1])
+            if minutes >= 60 or minutes < 0:
+                raise ValueError()
 
             degreesFloat = degrees + minutes / 60
             if pieces[0].find("-") == 0:
@@ -38,20 +40,16 @@ class Angle:
         # fraction = degNum - int(degNum)
         # self.setMinutes(fraction * 60)
 
-    def getDegrees(self):
-        return int(self._degreesFloat)
-
-    def getMinutes(self):
-        degrees = self._degreesFloat
-        minutes = (degrees - int(degrees)) * 60
-        return minutes
-
     def getDegreesFloat(self):
         return self._degreesFloat
 
     def getDegreeMinuteString(self):
-        strOut = str(self.getDegrees()) + "d"
-        min = self.getMinutes()
+        strOut = str(int(self._degreesFloat)) + "d"
+        if self._degreesFloat < 0 and self._degreesFloat > -1:
+            strOut = "-" + strOut
+        min = (self._degreesFloat - int(self._degreesFloat)) * 60
+        if min < 0:
+            min = min * -1
         min_frac = min - int(min)
         #strOut += format(int(min), '02')
         strOut += str(int(min))

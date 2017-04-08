@@ -75,3 +75,6 @@ class NavigableStar:
                 starDef = {'sha': columns[1], 'declination': columns[2]}
                 starDict[starName.lower()] = starDef
         return starDict
+
+star = NavigableStar("Antares")
+print star.predict("2017-04-08 04:30:00")
