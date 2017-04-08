@@ -64,3 +64,11 @@ class AngleTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             angle = A.Angle('0d60.0')
         self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
+
+    def test900_050_ExceptionMinutesLow(self):
+        with self.assertRaises(ValueError) as ctx:
+            angle = A.Angle('0d-0.1')
+        self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
+
+    def test900_060_ExceptionNonIntegerDegree(self):
+        pass
