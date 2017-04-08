@@ -13,6 +13,8 @@ class Angle:
         try:
             degrees = int(pieces[0])
             minutes = float(pieces[1])
+            if pieces[1].index('.') < 0:
+                raise ValueError()
             if minutes >= 60 or minutes < 0:
                 raise ValueError()
             self._degrees = degrees
