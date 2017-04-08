@@ -3,7 +3,7 @@ import softwareprocess.Angle as A
 
 class AngleTest(unittest.TestCase):
 
-    def setUP(self):
+    def setUp(self):
         self.strDegreesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
 
 # ---------
