@@ -1,4 +1,5 @@
 import pkg_resources
+from softwareprocess.Angle import Angle
 
 class NavigableStar:
     def __init__(self, starName):
@@ -9,8 +10,8 @@ class NavigableStar:
         config = self.getConfiguration()
         if not config.has_key(starName.lower()):
             raise ValueError(strStarInvalid)
-        self._sha = config[starName.lower()].get('sha')
-        self._declination = config[starName.lower()].get('declination')
+        self._sha = Angle(config[starName.lower()].get('sha'))
+        self._declination = Angle[starName.lower()].get('declination')
 
     @classmethod
     def getConfiguration(cls):
