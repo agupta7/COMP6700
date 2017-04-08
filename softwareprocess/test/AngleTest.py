@@ -18,7 +18,6 @@ class AngleTest(unittest.TestCase):
 #       degreeMinutesStr -> high value = 999d59.9
 # ---Sad path analysis
 #       degreeMinutesStr -> None / not specified
-#       degreeMinutesStr -> 12 (an integer)
 #       degreeMinutesStr -> '' empty string
 #       degreeMinutesStr -> '0d60.0' minutes is too high
 #       degreeMinutesStr -> '0d-0.1' minutes is too low
@@ -45,12 +44,13 @@ class AngleTest(unittest.TestCase):
         self.assertEquals(angle.getDegrees(), 999)
         self.assertEquals(angle.getMinutes(), 59.9)
 
-    def test900_010_ShouldErrorNoneAngle(self):
-        with self.assertRaises(ValueError) as ctx:
-            angle = A.Angle(None)
-        self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
+    def test100_040_ShouldConstructAngleInteger(self):
+        angle = A.Angle(12.5)
+        self.assertIsInstance(angle, A.Angle)
+        self.assertEquals(angle.getDegrees(), 12)
+        self.assertEquals(angle.getMinutes(), 30)
 
-    def test900_020_ExceptionIntegerAngle(self):
+    def test900_010_ShouldErrorNoneAngle(self):
         with self.assertRaises(ValueError) as ctx:
             angle = A.Angle(None)
         self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
