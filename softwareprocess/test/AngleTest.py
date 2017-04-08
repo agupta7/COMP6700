@@ -3,7 +3,8 @@ import softwareprocess.Angle as A
 
 class AngleTest(unittest.TestCase):
 
-
+    def setUP(self):
+        self.strDegreesFormatError = "String should in format XdY.Y where X is degrees and Y.Y is floating point minutes"
 
 # ---------
 # ----Acceptance tests
@@ -43,3 +44,13 @@ class AngleTest(unittest.TestCase):
         self.assertIsInstance(angle, A.Angle)
         self.assertEquals(angle.getDegrees(), 999)
         self.assertEquals(angle.getMinutes(), 59.9)
+
+    def test900_010_ShouldErrorNoneAngle(self):
+        with self.assertRaises(ValueError) as ctx:
+            angle = A.Angle(None)
+        self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
+
+    def test900_020_ExceptionIntegerAngle(self):
+        with self.assertRaises(ValueError) as ctx:
+            angle = A.Angle(None)
+        self.assertEquals(ctx.exception.args[0], self.strDegreesFormatError)
