@@ -28,8 +28,8 @@ class NavigableStar:
         for line in lines:
             columns = line.split('\t')
             starName = columns[0]
-            starDef = {}
-            starDef['sha'] = columns[1]
-            starDef['declination'] = columns[2]
+            starDef = {'sha': columns[1], 'declination': columns[2]}
             starDict[starName.lower()] = starDef
         return starDict
+
+NavigableStar('Altair')
