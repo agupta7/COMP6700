@@ -47,9 +47,7 @@ class Angle:
         strOut = str(int(self._degreesFloat)) + "d"
         if self._degreesFloat < 0 and self._degreesFloat > -1:
             strOut = "-" + strOut
-        min = (self._degreesFloat - int(self._degreesFloat)) * 60
-        if min < 0:
-            min = min * -1
+        min = abs(self._degreesFloat - int(self._degreesFloat)) * 60
         min_frac = min - int(min)
         #strOut += format(int(min), '02')
         strOut += str(int(min))
