@@ -29,26 +29,22 @@ class AngleTest(unittest.TestCase):
     def test100_010_ShouldConstructAngle(self):
         angle = A.Angle('50d30.9')
         self.assertIsInstance(angle, A.Angle)
-        self.assertEquals(angle.getDegrees(), 50)
-        self.assertEquals(angle.getMinutes(), 30.9)
+        self.assertEquals(angle.getDegreeMinuteString(), '50d30.9')
 
     def test100_020_ShouldConstructAngleLow(self):
         angle = A.Angle('-10d0.0')
         self.assertIsInstance(angle, A.Angle)
-        self.assertEquals(angle.getDegrees(), -10)
-        self.assertEquals(angle.getMinutes(), 0)
+        self.assertEquals(angle.getDegreeMinuteString(), '-10d0.0')
 
     def test100_030_ShouldConstructAngleHigh(self):
         angle = A.Angle('999d59.9')
         self.assertIsInstance(angle, A.Angle)
-        self.assertEquals(angle.getDegrees(), 999)
-        self.assertEquals(angle.getMinutes(), 59.9)
+        self.assertEquals(angle.getDegreeMinuteString(), '999d59.9')
 
     def test100_040_ShouldConstructAngleInteger(self):
         angle = A.Angle(12.5)
         self.assertIsInstance(angle, A.Angle)
-        self.assertEquals(angle.getDegrees(), 12)
-        self.assertEquals(angle.getMinutes(), 30)
+        self.assertEquals(angle.getDegreeMinuteString(), '12d30.0')
 
     def test900_010_ShouldErrorNoneAngle(self):
         with self.assertRaises(ValueError) as ctx:
