@@ -74,6 +74,10 @@ class DispatchTest(unittest.TestCase):
         self.assertEquals("7d24.3", dict['lat'])
         self.assertEquals("75d53.6", dict['long'])
 
-    def test300_920PredictWrongDate(self):
+    def test300_910PredictWrongDate(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-175'})
+        self.assertIn("error", dict)
+
+    def test300_920PredictWrongDate(self):
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': ''})
         self.assertIn("error", dict)
