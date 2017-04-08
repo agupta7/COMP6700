@@ -24,18 +24,25 @@ class NavigableStarTest(unittest.TestCase):
         star = NS.NavigableStar('AlTaIr')
         self.assertIsInstance(star, NS.NavigableStar)
 
-
-    def test900_010_ExceptionNoStarName(self):
+    def test100_910_ExceptionNoStarName(self):
         with self.assertRaises(ValueError) as ctx:
             star = NS.NavigableStar(None)
         self.assertEquals(ctx.exception.args[0], self.strStarInvalid)
 
-    def test900_020_ExceptionBlankStarName(self):
+    def test100_920_ExceptionBlankStarName(self):
         with self.assertRaises(ValueError) as ctx:
             star = NS.NavigableStar("")
         self.assertEquals(ctx.exception.args[0], self.strStarInvalid)
 
-    def test900_030_ExceptionWrongStarName(self):
+    def test100_930_ExceptionWrongStarName(self):
         with self.assertRaises(ValueError) as ctx:
             star = NS.NavigableStar("asdf")
         self.assertEquals(ctx.exception.args[0], self.strStarInvalid)
+
+# ----200 predict
+
+    def test200_010ShouldPredict(self):
+        star = NS.NavigableStar('AlTaIr')
+        latlong = star.predict("2016-01-17 03:15:42")
+        self.assertEquals('75d53.6', latlong['long'])
+        self.assertEquals('7d24.3', latlong['lat'])

@@ -4,11 +4,11 @@ class NavigableStar:
     def __init__(self, starName):
         strStarInvalid = "Please specify a valid navigable star in string insensitive format."
         if not isinstance(starName, (str, basestring)):
-            raise strStarInvalid
+            raise ValueError(strStarInvalid)
 
         config = self.getConfiguration()
         if not config.has_key(starName.lower()):
-            raise strStarInvalid
+            raise ValueError(strStarInvalid)
         self._sha = config[starName.lower()].get('sha')
         self._declination = config[starName.lower()].get('declination')
 

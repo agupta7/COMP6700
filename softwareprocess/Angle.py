@@ -1,6 +1,5 @@
 
 class Angle:
-
     def __init__(self, angle):
         if isinstance(angle, (str, basestring)):
             self.setDegreesString(angle)
@@ -55,3 +54,10 @@ class Angle:
 
     def getOnlyDegrees(self):
         return self.getDegrees() + self.getMinutes() / 60
+
+    def getDegreeMinuteString(self):
+        strOut = str(self.getDegrees()) + "d"
+        min = self.getMintues()
+        min_frac = int(min) - min
+        strOut += format(int(min), '02')
+        strOut += "{:.1f}".format(min_frac).lstrip(1)
