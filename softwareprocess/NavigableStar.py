@@ -40,7 +40,7 @@ class NavigableStar:
         excess_rotation = Angle(excess_rotation * 360)
 
         sum = gha_aries_referencepoint.getDegreesFloat() - years_offset.getDegreesFloat() + leap_days_rotation.getDegreesFloat() + excess_rotation.getDegreesFloat() + sha_star.getDegreesFloat()
-        sum = sum % 360
+        #sum = sum % 360
         latlong['long'] = Angle(sum).getDegreeMinuteString()
 
         return latlong
