@@ -97,7 +97,7 @@ def dispatchPredict(values):
         values['error'] = "Please specify a valid navigable star in string insensitive format in the key 'body'."
         return values
 
-    datetimeStr = "2001-01-01"
+    dateTimeStr = "2001-01-01"
     if 'date' in values:
         dateTimeStr = values['date']
 
