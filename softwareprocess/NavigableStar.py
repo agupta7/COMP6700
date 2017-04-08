@@ -32,7 +32,7 @@ class NavigableStar:
 
         # step c in excel sheet : gha_aries_referencepoint + years_offset + leap_days_rotation
 
-        begining_of_observation_year = dateTime.datetime(observationDateTime.year, 1, 1)
+        begining_of_observation_year = datetime.datetime(observationDateTime.year, 1, 1)
         excess_time_diff = (observationDateTime - begining_of_observation_year)
         excess_seconds = excess_time_diff.days * 86400 + excess_time_diff.seconds
         excess_rotation = excess_seconds / 86164.1
@@ -74,3 +74,6 @@ class NavigableStar:
                 starDef = {'sha': columns[1], 'declination': columns[2]}
                 starDict[starName.lower()] = starDef
         return starDict
+
+star = NavigableStar('AlTaIr')
+latlong = star.predict("2016-01-17 03:15:42")
