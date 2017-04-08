@@ -60,5 +60,5 @@ class DispatchTest(unittest.TestCase):
         self.assertEquals('observation is invalid', dict['error'])
 
     def test300_010Predict(self):
-        dict = dispatch.dispatch({'op': 'predict', 'star': 'AlTaIr'})
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr'})
         self.assertIn("lat", dict)
