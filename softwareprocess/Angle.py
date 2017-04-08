@@ -57,5 +57,3 @@ class Angle:
         strOut += str(int(min))
         strOut += "{:.1f}".format(min_frac).lstrip('0')
         return strOut
-
-Angle('50d30.9')
