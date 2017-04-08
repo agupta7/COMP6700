@@ -74,6 +74,3 @@ class NavigableStar:
                 starDef = {'sha': columns[1], 'declination': columns[2]}
                 starDict[starName.lower()] = starDef
         return starDict
-
-star = NavigableStar('AlTaIr')
-latlong = star.predict("2016-01-17 03:15:42")
