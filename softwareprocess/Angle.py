@@ -17,14 +17,13 @@ class Angle:
         if len(pieces) != 2:
             raise ValueError(strDegreesMinutesFormatError)
         try:
-            if pieces[1].index('.') < 0:
+            if pieces[1].find('.') < 0:
                 raise ValueError()
             degrees = int(pieces[0].lstrip("-"))
             minutes = float(pieces[1])
 
             degreesFloat = degrees + minutes / 60
-            "dfs".index()
-            if pieces[0].index("-") == 0:
+            if pieces[0].find("-") == 0:
                 degreesFloat = degreesFloat * -1
             self.setDegreesFloat(degreesFloat)
         except ValueError as er:
