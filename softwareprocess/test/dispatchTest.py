@@ -62,3 +62,9 @@ class DispatchTest(unittest.TestCase):
     def test300_010Predict(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr'})
         self.assertIn("lat", dict)
+        self.assertIn("long", dict)
+
+    def test300_020Predict(self):
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr', 'date': '2017-04-01'})
+        self.assertIn("lat", dict)
+        self.assertIn("long", dict)
