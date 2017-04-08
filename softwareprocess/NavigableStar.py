@@ -24,7 +24,7 @@ class NavigableStar:
         gha_aries_referencepoint = Angle("100d42.6")
 
         years_diff = observationDateTime.year - referencePoint.year
-        years_offset = Angle(Angle("-0d14.31667").getDegreesFloat() * years_diff)
+        years_offset = Angle(Angle("0d-14.31667").getDegreesFloat() * years_diff)
 
         leap_day_count =  self.getLeapDaysCount(observationDateTime)
         per_day_excess_rotation = Angle(360 - 86164.1/86400.0 * 360)
