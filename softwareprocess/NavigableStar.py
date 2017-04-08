@@ -1,6 +1,7 @@
 import pkg_resources
 from softwareprocess.Angle import Angle
 import datetime
+import math
 
 class NavigableStar:
     def __init__(self, starName):
@@ -15,7 +16,37 @@ class NavigableStar:
         self._declination = Angle(config[starName.lower()].get('declination'))
 
     def predict(self, dateTime):
-        observationDateTime = datetime.datetime.strptime(dateTime, "%Y-%m")
+        observationDateTime = datetime.datetime.strptime(dateTime, "%Y-%m-%d %H:%M:%S")
+        referencePoint = datetime.datetime.strptime("2001-01-1 00:00:00", "%Y-%m-%d %H:%M:%S")
+        latlong = {'lat': self._declination.getDegreeMinuteString()}
+        sha_star = self._sha
+
+        gha_aries_referencepoint = Angle("100d42.6")
+
+        years_diff = observationDateTime.year - referencePoint.year
+        years_offset = Angle(Angle("-0d14.31667").getDegreesFloat() * years_diff)
+
+        leap_day_count =  self.getLeapDaysCount(observationDateTime)
+        per_day_excess_rotation = Angle(360 - 86164.1/86400.0 * 360)
+        leap_days_rotation = Angle(per_day_excess_rotation.getDegreesFloat() * leap_day_count)
+
+        # step c in excel sheet : gha_aries_referencepoint + years_offset + leap_days_rotation
+
+        begining_of_observation_year = dateTime.datetime(observationDateTime.year, 1, 1)
+
+
+        return latlong
+
+    @classmethod
+    def getLeapDaysCount(cls, dstDate):
+        leapDays = 0
+        numYears = dstDate.year - 2000
+        leapDays += int(numYears / 4)
+
+        if dstDate.year % 4 == 0:
+            leapDays -= 1
+
+        return leapDays
 
     @classmethod
     def getConfiguration(cls):

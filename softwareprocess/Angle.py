@@ -52,13 +52,14 @@ class Angle:
             raise ValueError("Minutes can not be 60 or more or less than 0")
         self._minutes = minutes
 
-    def getOnlyDegrees(self):
+    def getDegreesFloat(self):
         return self.getDegrees() + self.getMinutes() / 60
 
     def getDegreeMinuteString(self):
         strOut = str(self.getDegrees()) + "d"
         min = self.getMinutes()
         min_frac = min - int(min)
-        strOut += format(int(min), '02')
+        #strOut += format(int(min), '02')
+        strOut += str(int(min))
         strOut += "{:.1f}".format(min_frac).lstrip('0')
         return strOut
