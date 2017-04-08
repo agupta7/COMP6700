@@ -15,7 +15,7 @@ class NavigableStar:
         self._declination = Angle(config[starName.lower()].get('declination'))
 
     def predict(self, dateTime):
-        observationDateTime =
+        observationDateTime = datetime.datetime.strptime(dateTime, "%Y-%m")
 
     @classmethod
     def getConfiguration(cls):
