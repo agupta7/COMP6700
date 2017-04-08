@@ -37,3 +37,9 @@ class AngleTest(unittest.TestCase):
         self.assertIsInstance(angle, A.Angle)
         self.assertEquals(angle.getDegrees(), -10)
         self.assertEquals(angle.getMinutes(), 0)
+
+    def test100_030_ShouldConstructAngleHigh(self):
+        angle = A.Angle('999d59.9')
+        self.assertIsInstance(angle, A.Angle)
+        self.assertEquals(angle.getDegrees(), 999)
+        self.assertEquals(angle.getMinutes(), 59.9)
