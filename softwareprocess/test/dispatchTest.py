@@ -70,6 +70,6 @@ class DispatchTest(unittest.TestCase):
         self.assertIn("long", dict)
 
     def test300_020Predict(self):
-        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelguese', 'date': '2016-01-017', 'time': '03:15:42'})
+        dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-017', 'time': '03:15:42'})
         self.assertEquals("7d24.3", dict['lat'])
         self.assertEquals("75d53.6", dict['long'])
