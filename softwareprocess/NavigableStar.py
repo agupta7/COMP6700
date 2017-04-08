@@ -33,7 +33,14 @@ class NavigableStar:
         # step c in excel sheet : gha_aries_referencepoint + years_offset + leap_days_rotation
 
         begining_of_observation_year = dateTime.datetime(observationDateTime.year, 1, 1)
+        excess_time_diff = (observationDateTime - begining_of_observation_year)
+        excess_seconds = excess_time_diff.days * 86400 + excess_time_diff.seconds
+        excess_rotation = excess_seconds / 86164.1
+        excess_rotation = excess_rotation - int(excess_rotation)
+        excess_rotation = Angle(excess_rotation * 360)
 
+        sum = gha_aries_referencepoint.getDegreesFloat() + years_offset.getDegreesFloat() + leap_days_rotation.getDegreesFloat() + excess_rotation.getDegreesFloat()
+        latlong['long'] = Angle(sum).getDegreeMinuteString()
 
         return latlong
 
