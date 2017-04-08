@@ -45,7 +45,7 @@ class Angle:
     def getMinutes(self):
         return self._minutes
     def setMinutes(self, minutes):
-        if not isinstance((int, long, float)):
+        if not isinstance(minutes, (int, long, float)):
             raise ValueError("Minutes should be a float")
         if minutes >= 60 or minutes < 0:
             raise ValueError("Minutes can not be 60 or more or less than 0")
