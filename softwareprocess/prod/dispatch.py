@@ -114,3 +114,5 @@ def dispatchPredict(values):
     values['long'] = latlong.get("long")
 
     return values
+
+dispatch({'op': 'predict', 'body': 'Betelguese', 'date': '2016-01-017', 'time': '03:15:42'})

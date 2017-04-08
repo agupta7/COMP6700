@@ -76,5 +76,3 @@ class NavigableStar:
                 starDict[starName.lower()] = starDef
         return starDict
 
-star = NavigableStar("Antares")
-print star.predict("2017-04-08 04:30:00")
