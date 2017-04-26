@@ -62,3 +62,8 @@ class LatitudeTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             lat = Lat.Latitude('-90d0.0')
         self.assertEquals(ctx.exception.args[0], self.latitudeTooLowStr)
+        
+    def test100_910_ShouldRaiseErrorLatitudeTooHigh(self):
+        with self.assertRaises(ValueError) as ctx:
+            lat = Lat.Latitude('90d0.0')
+        self.assertEquals(ctx.exception.args[0], self.latitudeTooHighStr)
