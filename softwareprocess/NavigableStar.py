@@ -17,6 +17,8 @@ class NavigableStar:
 
     def predict(self, dateTime):
         observationDateTime = datetime.datetime.strptime(dateTime, "%Y-%m-%d %H:%M:%S")
+        if (observationDateTime.year < 2001):
+            raise ValueError("Year must be greater than or equal to 2001.")
         referencePoint = datetime.datetime.strptime("2001-01-1 00:00:00", "%Y-%m-%d %H:%M:%S")
         latlong = {'lat': self._declination.getDegreeMinuteString()}
         sha_star = self._sha
