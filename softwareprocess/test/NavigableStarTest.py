@@ -7,6 +7,7 @@ class NavigableStarTest(unittest.TestCase):
         self.strStarInvalid = "Please specify a valid navigable star in string insensitive format."
         self.strDateInvalidFormat = "Please specify the date in the format yyyy-mm-dd."
         self.strTimeInvalidFormat = "Please specify the time in the 24-hr format HH:MM:SS."
+        self.strYearInvalid = "Year must be greater than or equal to 2001."
 
 # ----------------------
 # -----Acceptance tests
@@ -46,3 +47,9 @@ class NavigableStarTest(unittest.TestCase):
         latlong = star.predict("2016-01-17 03:15:42")
         self.assertEquals('75d53.6', latlong['long'])
         self.assertEquals('7d24.3', latlong['lat'])
+
+    def test200_910YearTooLow(self):
+        star = NS.NavigableStar('Betelgeuse')
+        with self.assertRaises(ValueError) as ctx:
+            latlong = star.predict("2000-01-17 03:15:42")
+        self.assertEquals(ctx.exception.args[0], self.strYearInvalid)

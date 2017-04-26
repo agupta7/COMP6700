@@ -58,6 +58,9 @@ class DispatchTest(unittest.TestCase):
     def test200_920CalculationErrorObservationInvalid(self):
         dict = dispatch.dispatch({'op': 'adjust', 'observation': '12.65'})
         self.assertEquals('observation is invalid', dict['error'])
+    def test200_930InputHasAltitude(self):
+        dict = dispatch.dispatch({'op': 'adjust', 'altitude': '29d53.2'})
+        self.assertIn('error', dict)
 
     def test300_010Predict(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr'})
