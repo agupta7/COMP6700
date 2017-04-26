@@ -1,4 +1,4 @@
-
+9
 class Angle:
     def __init__(self, angle):
         if isinstance(angle, (str, basestring)):
