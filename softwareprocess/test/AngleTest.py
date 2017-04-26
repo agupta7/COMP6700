@@ -50,6 +50,12 @@ class AngleTest(unittest.TestCase):
         self.assertEquals(angle.getDegreeMinuteString(), '12d30.0')
         self.assertEquals(angle.getDegreesFloat(), 12.5)
 
+    def test100_050_ShouldConstructAngleNegative(self):
+        angle = A.Angle('-0d30.0')
+        self.assertIsInstance(angle, A.Angle)
+        self.assertEquals(angle.getDegreeMinuteString(), '-0d30.0')
+        self.assertEquals(angle.getDegreesFloat(), -0.5)
+
     def test900_010_ShouldErrorNoneAngle(self):
         with self.assertRaises(ValueError) as ctx:
             angle = A.Angle(None)

@@ -17,8 +17,8 @@ class AltitudeTest(unittest.TestCase):
 #-------degreeMinutesStr -> high value = '89d59.9'
 #-------degreeMinutesStr -> low value = '0d0.1'
 #-------degreeMinutesFloat -> nominal value = 12.5
-#-------degreeMinutesFloat -> high value = '89.999'
-#-------degreeMinutesFloat -> low value = '0.0016667'
+#-------degreeMinutesFloat -> high value = 89.999
+#-------degreeMinutesFloat -> low value = 0.0016667
 #-----Sad path
 #-------degreeMinutesStr -> value too low = '0d0.0'
 #-------degreeMinutesStr -> value too high = '90d0.0'
@@ -46,3 +46,9 @@ class AltitudeTest(unittest.TestCase):
         self.assertIsInstance(alt, Alt.Altitude)
         self.assertEquals(alt.getDegreeMinuteString(), '12d30.0')
         self.assertAlmostEquals(alt.getDegreesFloat(), 12.5, 3)
+
+    def test100_050_ShouldConstructAltitudeHighFloat(self):
+        alt = Alt.Altitude(89.999)
+        self.assertIsInstance(alt, Alt.Altitude)
+        self.assertEquals(alt.getDegreeMinuteString(), '89d59.9')
+        self.assertAlmostEquals(alt.getDegreesFloat(), 89.9983, 3)
