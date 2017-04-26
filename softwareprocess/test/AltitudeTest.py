@@ -48,7 +48,7 @@ class AltitudeTest(unittest.TestCase):
         self.assertAlmostEquals(alt.getDegreesFloat(), 12.5, 3)
 
     def test100_050_ShouldConstructAltitudeHighFloat(self):
-        alt = Alt.Altitude(89.999)
+        alt = Alt.Altitude(89.998)
         self.assertIsInstance(alt, Alt.Altitude)
         self.assertEquals(alt.getDegreeMinuteString(), '89d59.9')
-        self.assertAlmostEquals(alt.getDegreesFloat(), 89.9983, 3)
+        self.assertAlmostEquals(alt.getDegreesFloat(), 89.998, 3)
