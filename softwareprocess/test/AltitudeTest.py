@@ -62,7 +62,7 @@ class AltitudeTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             alt = Alt.Altitude('0d0.0')
         self.assertEquals(ctx.exception.args[0], self.altitudeTooLowStr)
-    def test100_910_ShouldRaiseErrorAltitudeTooLow(self):
+    def test100_920_ShouldRaiseErrorAltitudeTooLow(self):
         with self.assertRaises(ValueError) as ctx:
             alt = Alt.Altitude('90d0.0')
         self.assertEquals(ctx.exception.args[0], self.altitudeTooHighStr)
