@@ -1,7 +1,7 @@
 import softwareprocess.SightingErrorCorrector as SEC
 import unittest
 
-class SightingErrorCorrectorTest(unittest):
+class SightingErrorCorrectorTest(unittest.TestCase):
 
 # ---------  Acceptance tests------------
 #---- 100 constructor
