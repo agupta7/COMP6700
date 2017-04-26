@@ -69,5 +69,43 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_920_ShouldRaiseValueErrorLongTooHigh(self):
+        lat = '16d32.3'
+        long = '360d0.0'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
 
-    
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_930_ShouldRaiseValueErrorAltitudeTooHigh(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '90d0.0'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_940_ShouldRaiseValueErrorAssumedLatTooHigh(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '90d0.0'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_950_ShouldRaiseValueErrorAssumedLongTooHigh(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '360d0.0'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
