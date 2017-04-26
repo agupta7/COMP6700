@@ -57,3 +57,13 @@ class LongitudeTest(unittest.TestCase):
         self.assertIsInstance(long, Long.Longitude)
         self.assertEquals(long.getDegreeMinuteString(), '0d0.0')
         self.assertEquals(long.getDegreesFloat(), 0)
+        
+    def test100_910_ShouldRaiseErrorLongitudeTooLow(self):
+        with self.assertRaises(ValueError) as ctx:
+            long = Long.Longitude('-0d0.1')
+        self.assertEquals(ctx.exception.args[0], self.longitudeTooLowStr)
+
+    def test100_920_ShouldRaiseErrorLongitudeTooHigh(self):
+        with self.assertRaises(ValueError) as ctx:
+            long = Long.Longitude('3600d0.0')
+        self.assertEquals(ctx.exception.args[0], self.longitudeTooHighStr)
