@@ -59,7 +59,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(sec, SEC.SightingErrorCorrector)
 
-    def test100_910_ShouldRaiseValueErrorLatTooHigh(self):
+    def test100_810_ShouldRaiseValueErrorLatTooHigh(self):
         lat = '90d0.0'
         long = '95d41.6'
         alt = '13d42.3'
@@ -69,7 +69,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
-    def test100_920_ShouldRaiseValueErrorLongTooHigh(self):
+    def test100_820_ShouldRaiseValueErrorLongTooHigh(self):
         lat = '16d32.3'
         long = '360d0.0'
         alt = '13d42.3'
@@ -79,7 +79,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
-    def test100_930_ShouldRaiseValueErrorAltitudeTooHigh(self):
+    def test100_830_ShouldRaiseValueErrorAltitudeTooHigh(self):
         lat = '16d32.3'
         long = '95d41.6'
         alt = '90d0.0'
@@ -89,7 +89,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
-    def test100_940_ShouldRaiseValueErrorAssumedLatTooHigh(self):
+    def test100_840_ShouldRaiseValueErrorAssumedLatTooHigh(self):
         lat = '16d32.3'
         long = '95d41.6'
         alt = '13d42.3'
@@ -99,7 +99,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
-    def test100_950_ShouldRaiseValueErrorAssumedLongTooHigh(self):
+    def test100_850_ShouldRaiseValueErrorAssumedLongTooHigh(self):
         lat = '16d32.3'
         long = '95d41.6'
         alt = '13d42.3'
@@ -109,3 +109,74 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+
+    def test100_910_ShouldRaiseValueErrorLatTooLow(self):
+        lat = '-90d0.0'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_920_ShouldRaiseValueErrorLongTooLow(self):
+        lat = '16d32.3'
+        long = '-0d0.1'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_930_ShouldRaiseValueErrorAltitudeTooLow(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '0d0.0'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_940_ShouldRaiseValueErrorAssumedLatTooLow(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-90d0.0'
+        assumedLong = '74d35.3'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+    def test100_950_ShouldRaiseValueErrorAssumedLongTooLow(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '-0d0.1'
+
+        with self.assertRaises(ValueError) as ctx:
+            sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(ctx.exception.args[0], (str, basestring))
+
+#---- 200 correct
+#---- Happy path analysis
+#----   input nominal values : ('16d32.3' lat, '95d41.6' long, '13d42.3' altitude, '-53d38.4' assumedLat, '74d35.3' assumedLong)
+#----   output : {'correctedDistance' : '3950', 'correctdAzimuth' : '164d42.9'}
+#----   input values : ('89d20.1' lat, '154d5.4' long, '37d17.4' altitude, '35d59.7' assumedLat, '74d35.3' assumedLong)
+#----   output : {'correctedDistance': '104', 'correctedAzimuth': '0d36.8'}
+#---- Sad path analysis is none because it works on validated instance variables
+
+    def test200_010ShouldCalculateCorrectionExample1(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        correction = sec.correct()
+        self.assertAlmostEquals(float(correction.get('correctedDistance')), 3950, 1)
+        self.assertEquals(correction.get('correctedAzimuth'), '164d42.9')
