@@ -23,7 +23,12 @@ class AltitudeTest(unittest.TestCase):
 #-------degreeMinutesStr -> value too low = '0d0.0'
 #-------degreeMinutesStr -> value too high = '90d0.0'
 
-    def test100_010_ShouldConstructAltitude(self):
+    def test100_010_ShouldConstructAltitudeNominal(self):
         alt = Alt.Altitude('12d30.5')
         self.assertIsInstance(alt, Alt.Altitude)
         self.assertEquals(alt.getDegreeMinuteString(), '12d30.5')
+
+    def test100_020_ShouldConstructAltitudeHihh(self):
+        alt = Alt.Altitude('89d59.9')
+        self.assertIsInstance(alt, Alt.Altitude)
+        self.assertEquals(alt.getDegreeMinuteString(), '89d59.9')
