@@ -28,32 +28,37 @@ class LatitudeTest(unittest.TestCase):
     #-------degreeMinutesStr -> value too high = '90d0.0'
 
     def test100_010_ShouldConstructLatitudeNominal(self):
-        alt = Lat.Latitude('12d30.5')
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '12d30.5')
-        self.assertAlmostEquals(alt.getDegreesFloat(), 12.5083, 3)
+        lat = Lat.Latitude('12d30.5')
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '12d30.5')
+        self.assertAlmostEquals(lat.getDegreesFloat(), 12.5083, 3)
     def test100_020_ShouldConstructLatitudeHigh(self):
-        alt = Lat.Latitude('89d59.9')
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '89d59.9')
-        self.assertAlmostEquals(alt.getDegreesFloat(), 89.9983, 3)
+        lat = Lat.Latitude('89d59.9')
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '89d59.9')
+        self.assertAlmostEquals(lat.getDegreesFloat(), 89.9983, 3)
     def test100_030_ShouldConstructLatitudeLow(self):
-        alt = Lat.Latitude('-89d59.9')
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '-89d59.9')
-        self.assertAlmostEquals(alt.getDegreesFloat(), -89.9983, 3)
+        lat = Lat.Latitude('-89d59.9')
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '-89d59.9')
+        self.assertAlmostEquals(lat.getDegreesFloat(), -89.9983, 3)
     def test100_040_ShouldConstructLatitudeNominalFloat(self):
-        alt = Lat.Latitude(12.5)
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '12d30.0')
-        self.assertAlmostEquals(alt.getDegreesFloat(), 12.5, 3)
+        lat = Lat.Latitude(12.5)
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '12d30.0')
+        self.assertAlmostEquals(lat.getDegreesFloat(), 12.5, 3)
     def test100_050_ShouldConstructLatitudeHighFloat(self):
-        alt = Lat.Latitude(89.998)
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '89d59.9')
-        self.assertAlmostEquals(alt.getDegreesFloat(), 89.998, 3)
+        lat = Lat.Latitude(89.998)
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '89d59.9')
+        self.assertAlmostEquals(lat.getDegreesFloat(), 89.998, 3)
     def test100_060_ShouldConstructLatitudeLowFloat(self):
-        alt = Lat.Latitude(-89.998)
-        self.assertIsInstance(alt, Lat.Latitude)
-        self.assertEquals(alt.getDegreeMinuteString(), '-89d59.9')
-        self.assertAlmostEquals(alt.getDegreesFloat(), -89.998, 3)
+        lat = Lat.Latitude(-89.998)
+        self.assertIsInstance(lat, Lat.Latitude)
+        self.assertEquals(lat.getDegreeMinuteString(), '-89d59.9')
+        self.assertAlmostEquals(lat.getDegreesFloat(), -89.998, 3)
+        
+    def test100_910_ShouldRaiseErrorLatitudeTooLow(self):
+        with self.assertRaises(ValueError) as ctx:
+            lat = Lat.Latitude('-90d0.0')
+        self.assertEquals(ctx.exception.args[0], self.latitudeTooLowStr)
