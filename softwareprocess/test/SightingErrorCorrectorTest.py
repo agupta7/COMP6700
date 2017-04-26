@@ -40,3 +40,23 @@ class SightingErrorCorrectorTest(unittest.TestCase):
 
         sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         self.assertIsInstance(sec, SEC.SightingErrorCorrector)
+
+    def test100_020_ShouldConstructHighInputs(self):
+        lat = '89d59.9'
+        long = '359d59.9'
+        alt = '89d59.9'
+        assumedLat = '89d59.9'
+        assumedLong = '359d59.9'
+
+        sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(sec, SEC.SightingErrorCorrector)
+
+    def test100_030_ShouldConstructLowInputs(self):
+        lat = '-89d59.9'
+        long = '0d0.0'
+        alt = '0d0.1'
+        assumedLat = '-89d59.9'
+        assumedLong = '0d0.0'
+
+        sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(sec, SEC.SightingErrorCorrector)
