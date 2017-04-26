@@ -3,8 +3,8 @@ import unittest
 
 class SightingErrorCorrectorTest(unittest):
 
-# ---- 100 Acceptance tests
-# ---- constructor
+# ---------  Acceptance tests------------
+#---- 100 constructor
 #------- input :    lat         - 'XdY.Y' format like elsewhere.  -90 < lat < 90
 #------             long        - 'XdY.Y' format like elsewhere.  0<= long < 360
 #-------            altitude    - 'XdY.Y' format like elsewhere.  0 < alt < 90
@@ -30,3 +30,13 @@ class SightingErrorCorrectorTest(unittest):
 #-----------------assumedLat is too low ('16d32.3' lat, '95d41.6' long, '13d42.3' altitude, '-90d0.0' assumedLat, '74d35.3' assumedLong)
 #-----------------assumedLong is too low ('16d32.3' lat, '95d41.6' long, '13d42.3' altitude, '-53d38.4' assumedLat, '-0d0.1' assumedLong)
 #------ output : ValueError raised explaining which value was too low
+
+    def test100_010_ShouldConstructNominalInputs(self):
+        lat = '16d32.3'
+        long = '95d41.6'
+        alt = '13d42.3'
+        assumedLat = '-53d38.4'
+        assumedLong = '74d35.3'
+
+        sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        self.assertIsInstance(sec, SEC.SightingErrorCorrector)
