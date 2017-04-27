@@ -56,6 +56,12 @@ class AngleTest(unittest.TestCase):
         self.assertEquals(angle.getDegreeMinuteString(), '-0d3.0')
         self.assertAlmostEquals(angle.getDegreesFloat(), -(3.0/60), 3)
 
+    def test100_060_ShouldCOnstructAngleOverflow(self):
+        angle = A.Angle(13.999999999)
+        self.assertIsInstance(angle, A.Angle)
+        self.assertEquals(angle.getDegreeMinuteString(), '14d0.0')
+        self.assertAlmostEquals(angle.getDegreesFloat(), 13.999999999, 3)
+
     def test900_010_ShouldErrorNoneAngle(self):
         with self.assertRaises(ValueError) as ctx:
             angle = A.Angle(None)

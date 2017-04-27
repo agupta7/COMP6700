@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="Assignment 5">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/201720Assignment6.xls" afterPath="$PROJECT_DIR$/201720Assignment6.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/Angle.py" afterPath="$PROJECT_DIR$/softwareprocess/Angle.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/AngleTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/AngleTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +51,18 @@
       <file leaf-file-name="Angle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/softwareprocess/Angle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AngleTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/softwareprocess/test/AngleTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -125,7 +135,6 @@
         <option value="$PROJECT_DIR$/softwareprocess/test/NavigableStarTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/NavigableStar.py" />
         <option value="$PROJECT_DIR$/softwareprocess/Angles/Altitude.py" />
-        <option value="$PROJECT_DIR$/softwareprocess/test/AngleTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/sandbox.py" />
         <option value="$PROJECT_DIR$/softwareprocess/test/AltitudeTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/test/LatitudeTest.py" />
@@ -133,12 +142,13 @@
         <option value="$PROJECT_DIR$/softwareprocess/test/LongitudeTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/SightingErrorCorrector.py" />
-        <option value="$PROJECT_DIR$/softwareprocess/Angle.py" />
         <option value="$PROJECT_DIR$/softwareprocess/angles/Latitude.py" />
         <option value="$PROJECT_DIR$/softwareprocess/angles/Altitude.py" />
         <option value="$PROJECT_DIR$/softwareprocess/angles/Longitude.py" />
         <option value="$PROJECT_DIR$/softwareprocess/prod/dispatch.py" />
         <option value="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
+        <option value="$PROJECT_DIR$/softwareprocess/test/AngleTest.py" />
+        <option value="$PROJECT_DIR$/softwareprocess/Angle.py" />
       </list>
     </option>
   </component>
@@ -191,6 +201,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSSE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSSE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="softwareprocess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -211,29 +239,7 @@
       <recent name="$PROJECT_DIR$/softwareprocess/prod" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest SightingErrorCorrectorTest.test200_010ShouldCalculateCorrectionExample2">
-    <configuration default="false" name="Unittest DispatchTest.test100_030_DispatchCorrect" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
-      <option name="CLASS_NAME" value="DispatchTest" />
-      <option name="METHOD_NAME" value="test100_030_DispatchCorrect" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest AngleTest.test100_050_ShouldConstructAngleNegative">
     <configuration default="false" name="Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -313,6 +319,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" />
       <option name="CLASS_NAME" value="SightingErrorCorrectorTest" />
       <option name="METHOD_NAME" value="test200_010ShouldCalculateCorrectionExample2" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest AngleTest.test100_050_ShouldConstructAngleNegative" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/AngleTest.py" />
+      <option name="CLASS_NAME" value="AngleTest" />
+      <option name="METHOD_NAME" value="test100_050_ShouldConstructAngleNegative" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -498,19 +526,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.Angle" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.All Tests (TDD)" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
-      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittest SightingErrorCorrectorTest.test200_010ShouldCalculateCorrectionExample2" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest SightingErrorCorrectorTest.test200_010ShouldCalculateCorrectionExample2" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittest AngleTest.test100_050_ShouldConstructAngleNegative" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest SightingErrorCorrectorTest.test200_010ShouldCalculateCorrectionExample2" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest AngleTest.test100_050_ShouldConstructAngleNegative" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest SightingErrorCorrectorTest.test200_010ShouldCalculateCorrectionExample2" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
       </list>
     </recent_temporary>
   </component>
@@ -602,20 +630,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 25m 18s.xml">
+    <history-entry file="All_Tests_(TDD) - 2017.04.27 at 18h 28m 50s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 33m 32s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
+    <history-entry file="Unittest_AngleTest_test100_050_ShouldConstructAngleNegative - 2017.04.27 at 18h 26m 43s.xml">
+      <configuration name="Unittest AngleTest.test100_050_ShouldConstructAngleNegative" configurationId="tests" />
     </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 41m 33s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
+    <history-entry file="Unittest_AngleTest_test100_050_ShouldConstructAngleNegative - 2017.04.27 at 18h 27m 11s.xml">
+      <configuration name="Unittest AngleTest.test100_050_ShouldConstructAngleNegative" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_DispatchTest_test400_020DispatchCorrectIsAccurate - 2017.04.26 at 22h 33m 27s.xml">
-      <configuration name="Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" configurationId="tests" />
+    <history-entry file="Unittest_AngleTest_test100_050_ShouldConstructAngleNegative - 2017.04.27 at 18h 27m 20s.xml">
+      <configuration name="Unittest AngleTest.test100_050_ShouldConstructAngleNegative" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_DispatchTest_test400_710_DispatchCorrectLatOutOfBounds - 2017.04.26 at 22h 36m 07s.xml">
-      <configuration name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" configurationId="tests" />
+    <history-entry file="Unittest_AngleTest_test100_050_ShouldConstructAngleNegative - 2017.04.27 at 18h 27m 22s.xml">
+      <configuration name="Unittest AngleTest.test100_050_ShouldConstructAngleNegative" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_DispatchTest_test400_710_DispatchCorrectLatOutOfBounds - 2017.04.26 at 22h 36m 18s.xml">
       <configuration name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" configurationId="tests" />
@@ -651,18 +679,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3968504" sideWeight="0.50390905" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23453909" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.452459" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40655738" sideWeight="0.49609098" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2492378" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40808344" sideWeight="0.49609098" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -941,13 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/softwareprocess/test/AngleTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/test/AltitudeTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-424">
@@ -1030,10 +1051,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/softwareprocess/test/AngleTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/Angle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
           <folding />
         </state>
       </provider>

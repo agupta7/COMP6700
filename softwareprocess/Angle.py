@@ -47,12 +47,14 @@ class Angle:
         return math.pi / 180 * self.getDegreesFloat()
 
     def getDegreeMinuteString(self):
-        strOut = str(int(self._degreesFloat)) + "d"
-        if self._degreesFloat < 0 and self._degreesFloat > -1:
+        minutesTotal = round(self._degreesFloat * 60, 1)
+        degrees = int(minutesTotal / 60)
+        strOut = str(abs(degrees)) + "d"
+        if minutesTotal < 0:
             strOut = "-" + strOut
-        min = abs(self._degreesFloat - int(self._degreesFloat)) * 60
+        min = abs(minutesTotal - degrees * 60)
         min_frac = min - int(min)
         #strOut += format(int(min), '02')
-        strOut += str(int(min))
-        strOut += "{:.1f}".format(min_frac).lstrip('0')
+        strOut += str(float(min))
+        #strOut += "{:.1f}".format(min_frac).lstrip('0')
         return strOut
