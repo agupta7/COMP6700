@@ -1,4 +1,5 @@
-9
+import math
+
 class Angle:
     def __init__(self, angle):
         if isinstance(angle, (str, basestring)):
@@ -39,6 +40,9 @@ class Angle:
 
     def getDegreesFloat(self):
         return self._degreesFloat
+
+    def getRadiansFloat(self):
+        return math.pi / 180 * self.getDegreesFloat()
 
     def getDegreeMinuteString(self):
         strOut = str(int(self._degreesFloat)) + "d"
