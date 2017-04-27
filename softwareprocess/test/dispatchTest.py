@@ -14,7 +14,7 @@ class DispatchTest(unittest.TestCase):
     def test100_020_DispatchPredict(self):
         dict = dispatch.dispatch({'op': 'predict'})
         self.assertEquals(dict['op'], 'predict')
-    def test100_020_DispatchCorrect(self):
+    def test100_030_DispatchCorrect(self):
         dict = dispatch.dispatch({'op': 'correct'})
         self.assertEquals(dict['op'], 'correct')
 
@@ -94,6 +94,9 @@ class DispatchTest(unittest.TestCase):
 
     def test400_910DispatchIncorrectParameter(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': 16.5, 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
+        self.assertIsInstance(dict.get('error'), str)
+    def test400_920DispatchIncorrectParameter(self):
+        dict = dispatch.dispatch({'op': 'correct', 'lat': '16d15.5', 'long': '', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
         self.assertIsInstance(dict.get('error'), str)
 
     def test500_010_DispatchLocate(self):

@@ -117,10 +117,11 @@ def dispatchPredict(values):
     return values
 
 def dispatchCorrect(values):
-    if not (isinstance(values['lat'], basestring) and isinstance(values['long'], basestring) and
+    if not (isinstance(values.get('lat'), basestring) and isinstance(values['long'], basestring) and
                 isinstance(values['altitude'], basestring) and isinstance(values['assumedLat'], basestring) and
                 isinstance(values['assumedLong'], basestring)):
         values['error'] = "All parameters must be strings."
+        return values
     try:
         sec = SEC.SightingErrorCorrector(values['lat'], values['long'], values['altitude'], values['assumedLat'], values['assumedLong'])
         correction = sec.correct()
