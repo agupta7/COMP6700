@@ -66,33 +66,28 @@ class DispatchTest(unittest.TestCase):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr'})
         self.assertIn("lat", dict)
         self.assertIn("long", dict)
-
     def test300_020Predict(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'AlTaIr', 'date': '2017-04-01'})
         self.assertIn("lat", dict)
         self.assertIn("long", dict)
-
     def test300_020Predict(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42'})
         self.assertEquals("7d24.3", dict['lat'])
         self.assertEquals("75d53.6", dict['long'])
-
     def test300_910PredictWrongDate(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-175'})
         self.assertIn("error", dict)
-
     def test300_920PredictWrongDate(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': ''})
         self.assertIn("error", dict)
-
     def test300_930PredictWrongTime(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:60:23'})
         self.assertIn("error", dict)
-
     def test300_940PredictLatPresent(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:30:23', 'lat': ''})
         self.assertIn("error", dict)
-
     def test300_950PredictLongPresent(self):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:30:23', 'long': ''})
         self.assertIn("error", dict)
+
+    

@@ -190,4 +190,4 @@ class SightingErrorCorrectorTest(unittest.TestCase):
         sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         correction = sec.correct()
         self.assertAlmostEquals(float(correction.get('correctedDistance')), 104, delta=0.15)
-        self.assertEquals(correction.get('correctedAzimuth'), '164d42.9')
+        self.assertEquals(correction.get('correctedAzimuth'), '0d36.8')

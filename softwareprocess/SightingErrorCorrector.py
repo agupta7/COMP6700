@@ -14,10 +14,7 @@ class SightingErrorCorrector:
 
     def correct(self):
         latRad = self._lat.getRadiansFloat()
-        longRad = self._long.getRadiansFloat()
-        altRad = self._altitude.getRadiansFloat()
         assLatRad = self._assumedLat.getRadiansFloat()
-        assLongRad = self._assumedLong.getRadiansFloat()
 
         # step A : calculate the local hour angle of the navigator
         LHA = Ang.Angle(self._long.getDegreesFloat() + self._assumedLong.getDegreesFloat())
