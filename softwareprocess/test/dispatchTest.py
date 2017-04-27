@@ -17,9 +17,6 @@ class DispatchTest(unittest.TestCase):
     def test100_020_DispatchCorrect(self):
         dict = dispatch.dispatch({'op': 'correct'})
         self.assertEquals(dict['op'], 'correct')
-    def test100_020_DispatchLocate(self):
-        dict = dispatch.dispatch({'op': 'locate'})
-        self.assertEquals(dict['op'], 'locate')
 
     def test100_910_DispatchInvalidOp(self):
         dict = dispatch.dispatch({'op': 'beam me up'})
@@ -90,4 +87,11 @@ class DispatchTest(unittest.TestCase):
         dict = dispatch.dispatch({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:30:23', 'long': ''})
         self.assertIn("error", dict)
 
-    
+    def test400_010DispatchCorrectDispatches(self):
+        dict = dispatch.dispatch({'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
+        self.assertIn("correctedAzimuth", dict)
+        self.assertIn("correctedDistance", dict)
+
+    def test500_010_DispatchLocate(self):
+        dict = dispatch.dispatch({'op': 'locate'})
+        self.assertEquals(dict['op'], 'locate')

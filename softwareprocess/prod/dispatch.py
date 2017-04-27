@@ -1,6 +1,7 @@
 import softwareprocess.StarSighting as SS
 from softwareprocess.NavigableStar import NavigableStar
 from softwareprocess.Angle import Angle
+import softwareprocess.SightingErrorCorrector as SEC
 
 def dispatch(values=None):
 
@@ -21,7 +22,7 @@ def dispatch(values=None):
         val = dispatchPredict(values)
         return val
     elif(values['op'] == 'correct'):
-        return values    #This calculation is stubbed out
+        return dispatchCorrect(values)
     elif(values['op'] == 'locate'):
         return values    #This calculation is stubbed out
     else:
@@ -115,3 +116,14 @@ def dispatchPredict(values):
 
     return values
 
+def dispatchCorrect(values):
+
+    try:
+        correction = SEC.SightingErrorCorrector(values.lat, values.long, values.altitude, values.assumedLat, values.assumedLong)
+    except Exception as e:
+        values['error'] = str(e.args[0])
+        return values
+
+    values['correctedAzimuth'] = correction['correctedAzimuth']
+    values['correctedDistance'] = correction['correctedDistance']
+    return values
