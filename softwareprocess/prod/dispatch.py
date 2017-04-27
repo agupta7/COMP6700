@@ -119,7 +119,8 @@ def dispatchPredict(values):
 def dispatchCorrect(values):
 
     try:
-        correction = SEC.SightingErrorCorrector(values.lat, values.long, values.altitude, values.assumedLat, values.assumedLong)
+        sec = SEC.SightingErrorCorrector(values['lat'], values['long'], values['altitude'], values['assumedLat'], values['assumedLong'])
+        correction = sec.correct()
     except Exception as e:
         values['error'] = str(e.args[0])
         return values
