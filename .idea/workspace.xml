@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" line="14" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="Assignment 5" />
+    <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="Assignment 5">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +24,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Latitude.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SightingErrorCorrectorTest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="192" column="63" lean-forward="true" selection-start-line="192" selection-start-column="63" selection-end-line="192" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+                <marker date="1493252433088" expanded="true" signature="122:3049" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Latitude.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/softwareprocess/angles/Latitude.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -109,9 +125,9 @@
         <option value="$PROJECT_DIR$/softwareprocess/test/Longitude.py" />
         <option value="$PROJECT_DIR$/softwareprocess/test/LongitudeTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/angles/Longitude.py" />
-        <option value="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" />
         <option value="$PROJECT_DIR$/softwareprocess/Angle.py" />
         <option value="$PROJECT_DIR$/softwareprocess/SightingErrorCorrector.py" />
+        <option value="$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py" />
       </list>
     </option>
   </component>
@@ -596,9 +612,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 17h 46m 14s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.04.26 at 17h 47m 40s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
@@ -626,6 +639,9 @@
     <history-entry file="All_Tests_(TDD) - 2017.04.26 at 19h 16m 13s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 19h 18m 31s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -638,7 +654,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="84" width="1360" height="743" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17231223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -651,7 +667,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38625205" sideWeight="0.49609098" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38625205" sideWeight="0.49609098" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1031,16 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/Angle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1052,8 +1058,19 @@
     <entry file="file://$PROJECT_DIR$/softwareprocess/angles/Latitude.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="192" column="63" lean-forward="true" selection-start-line="192" selection-start-column="63" selection-end-line="192" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <marker date="1493252433088" expanded="true" signature="122:3049" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

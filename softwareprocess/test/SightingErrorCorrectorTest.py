@@ -169,7 +169,7 @@ class SightingErrorCorrectorTest(unittest.TestCase):
 #----   output : {'correctedDistance': '104', 'correctedAzimuth': '0d36.8'}
 #---- Sad path analysis is none because it works on validated instance variables
 
-    def test200_010ShouldCalculateCorrectionExample1(self):
+    def test200_010ShouldCalculateCorrectionExample2(self):
         lat = '16d32.3'
         long = '95d41.6'
         alt = '13d42.3'
@@ -178,5 +178,16 @@ class SightingErrorCorrectorTest(unittest.TestCase):
 
         sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
         correction = sec.correct()
-        self.assertAlmostEquals(float(correction.get('correctedDistance')), 3950, 1)
+        self.assertAlmostEquals(float(correction.get('correctedDistance')), 3950, delta=0.15)
+        self.assertEquals(correction.get('correctedAzimuth'), '164d42.9')
+    def test200_020ShouldCalculateCorrectionExample1(self):
+        lat = '89d20.1'
+        long = '154d5.4'
+        alt = '37d17.4'
+        assumedLat = '35d59.7'
+        assumedLong = '74d35.3'
+
+        sec = SEC.SightingErrorCorrector(lat=lat, long=long, altitude=alt, assumedLat=assumedLat, assumedLong=assumedLong)
+        correction = sec.correct()
+        self.assertAlmostEquals(float(correction.get('correctedDistance')), 104, delta=0.15)
         self.assertEquals(correction.get('correctedAzimuth'), '164d42.9')
