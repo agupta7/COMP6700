@@ -117,9 +117,9 @@ def dispatchPredict(values):
     return values
 
 def dispatchCorrect(values):
-    if not (isinstance(values.get('lat'), basestring) and isinstance(values['long'], basestring) and
-                isinstance(values['altitude'], basestring) and isinstance(values['assumedLat'], basestring) and
-                isinstance(values['assumedLong'], basestring)):
+    if not (isinstance(values.get('lat'), basestring) and isinstance(values.get('long'), basestring) and
+                isinstance(values.get('altitude'), basestring) and isinstance(values.get('assumedLat'), basestring) and
+                isinstance(values.get('assumedLong'), basestring)):
         values['error'] = "All parameters must be strings."
         return values
     try:

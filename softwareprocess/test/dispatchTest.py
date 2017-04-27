@@ -92,11 +92,14 @@ class DispatchTest(unittest.TestCase):
         self.assertIn("correctedAzimuth", dict)
         self.assertIn("correctedDistance", dict)
 
-    def test400_910DispatchIncorrectParameter(self):
+    def test400_910DispatchIncorrectParameterType(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': 16.5, 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
         self.assertIsInstance(dict.get('error'), str)
-    def test400_920DispatchIncorrectParameter(self):
+    def test400_920DispatchIncorrectParameterBlank(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': '16d15.5', 'long': '', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
+        self.assertIsInstance(dict.get('error'), str)
+    def test400_930DispatchIncorrectParameterNone(self):
+        dict = dispatch.dispatch({'op': 'correct', 'lat': '16d15.5', 'long': '95d41.6', 'altitude': None, 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
         self.assertIsInstance(dict.get('error'), str)
 
     def test500_010_DispatchLocate(self):
