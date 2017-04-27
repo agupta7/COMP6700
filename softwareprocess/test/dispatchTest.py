@@ -96,6 +96,12 @@ class DispatchTest(unittest.TestCase):
         self.assertAlmostEquals(float(correction.get('correctedDistance')), 104, delta=0.15)
         self.assertEquals(correction.get('correctedAzimuth'), '0d36.8')
 
+    # thorough boundary value coverage is in the SightingErrorCorrectorTest class
+    # this is just ensuring that the error being thrown there translates to an error string here
+    def test400_710_DispatchCorrectLatOutOfBounds(self):
+        correction = dispatch.dispatch({'op': 'correct', 'lat': '90d0e.0', 'long': '154d5.4', 'altitude': '37d17.4', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
+        self.assertIsInstance(correction.get('error'), basestring)
+
     def test400_810_DispatchCorrectCorrectedAzimuthPresent(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3', 'correctedAzimuth': ''})
         self.assertIsInstance(dict.get('error'), basestring)

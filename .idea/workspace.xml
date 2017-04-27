@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad44d615-e81f-4d64-9110-d0839d8a3de4" name="Default" comment="Assignment 5">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/201720Assignment6.xls" afterPath="$PROJECT_DIR$/201720Assignment6.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" afterPath="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
     </list>
@@ -28,8 +27,8 @@
       <file leaf-file-name="SightingErrorCorrectorTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="15" selection-end-line="185" selection-end-column="22" />
+            <state relative-caret-position="476">
+              <caret line="191" column="8" lean-forward="true" selection-start-line="191" selection-start-column="8" selection-end-line="192" selection-end-column="71" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <marker date="1493252445425" expanded="true" signature="122:3049" ph="..." />
@@ -54,8 +53,8 @@
       <file leaf-file-name="dispatchTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/softwareprocess/test/dispatchTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+            <state relative-caret-position="192">
+              <caret line="101" column="70" lean-forward="false" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -268,51 +267,7 @@
       <recent name="$PROJECT_DIR$/softwareprocess/prod" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent">
-    <configuration default="false" name="Unittests in LatitudeTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/LatitudeTest.py" />
-      <option name="CLASS_NAME" value="LatitudeTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in LongitudeTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/LongitudeTest.py" />
-      <option name="CLASS_NAME" value="LongitudeTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds">
     <configuration default="false" name="Unittest DispatchTest.test500_010_DispatchLocate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -370,6 +325,50 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
       <option name="CLASS_NAME" value="DispatchTest" />
       <option name="METHOD_NAME" value="test400_810_DispatchCorrectCorrectedAzimuthPresent" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
+      <option name="CLASS_NAME" value="DispatchTest" />
+      <option name="METHOD_NAME" value="test400_020DispatchCorrectIsAccurate" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/softwareprocess/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/softwareprocess/test/dispatchTest.py" />
+      <option name="CLASS_NAME" value="DispatchTest" />
+      <option name="METHOD_NAME" value="test400_710_DispatchCorrectLatOutOfBounds" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -555,19 +554,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.Angle" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.All Tests (TDD)" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in LatitudeTest" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in LongitudeTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test500_010_DispatchLocate" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
-      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test500_010_DispatchLocate" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test500_010_DispatchLocate" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in LongitudeTest" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in LatitudeTest" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test100_030_DispatchCorrect" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DispatchTest.test500_010_DispatchLocate" />
       </list>
     </recent_temporary>
   </component>
@@ -659,9 +658,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 13m 20s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 17m 04s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
@@ -671,23 +667,26 @@
     <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 25m 18s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_DispatchTest_test100_030_DispatchCorrect - 2017.04.26 at 22h 14m 33s.xml">
-      <configuration name="Unittest DispatchTest.test100_030_DispatchCorrect" configurationId="tests" />
+    <history-entry file="All_Tests_(TDD) - 2017.04.26 at 22h 33m 32s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_DispatchTest_test100_030_DispatchCorrect - 2017.04.26 at 22h 15m 40s.xml">
-      <configuration name="Unittest DispatchTest.test100_030_DispatchCorrect" configurationId="tests" />
+    <history-entry file="Unittest_DispatchTest_test400_020DispatchCorrectIsAccurate - 2017.04.26 at 22h 33m 27s.xml">
+      <configuration name="Unittest DispatchTest.test400_020DispatchCorrectIsAccurate" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_DispatchTest_test400_710_DispatchCorrectLatOutOfBounds - 2017.04.26 at 22h 36m 07s.xml">
+      <configuration name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_DispatchTest_test400_710_DispatchCorrectLatOutOfBounds - 2017.04.26 at 22h 36m 18s.xml">
+      <configuration name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_DispatchTest_test400_710_DispatchCorrectLatOutOfBounds - 2017.04.26 at 22h 36m 28s.xml">
+      <configuration name="Unittest DispatchTest.test400_710_DispatchCorrectLatOutOfBounds" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_DispatchTest_test400_810_DispatchCorrectCorrectedAzimuthPresent - 2017.04.26 at 22h 24m 29s.xml">
       <configuration name="Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittest_DispatchTest_test400_810_DispatchCorrectCorrectedAzimuthPresent - 2017.04.26 at 22h 24m 42s.xml">
       <configuration name="Unittest DispatchTest.test400_810_DispatchCorrectCorrectedAzimuthPresent" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_DispatchTest_test500_010_DispatchLocate - 2017.04.26 at 22h 14m 27s.xml">
-      <configuration name="Unittest DispatchTest.test500_010_DispatchLocate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_LongitudeTest - 2017.04.26 at 22h 11m 28s.xml">
-      <configuration name="Unittests in LongitudeTest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -708,7 +707,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3968504" sideWeight="0.50390905" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23453909" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45335516" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -999,7 +998,7 @@
         <state relative-caret-position="105">
           <caret line="7" column="69" lean-forward="false" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,7 +1008,7 @@
         <state relative-caret-position="90">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1027,7 +1026,7 @@
         <state relative-caret-position="-424">
           <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,7 +1036,7 @@
         <state relative-caret-position="75">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="119" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1047,7 +1046,7 @@
         <state relative-caret-position="45">
           <caret line="4" column="0" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="122" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1089,8 +1088,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/test/SightingErrorCorrectorTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="15" selection-end-line="185" selection-end-column="22" />
+        <state relative-caret-position="476">
+          <caret line="191" column="8" lean-forward="true" selection-start-line="191" selection-start-column="8" selection-end-line="192" selection-end-column="71" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <marker date="1493252445425" expanded="true" signature="122:3049" ph="..." />
@@ -1100,8 +1099,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/softwareprocess/test/dispatchTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+        <state relative-caret-position="192">
+          <caret line="101" column="70" lean-forward="false" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
           <folding />
         </state>
       </provider>
