@@ -120,7 +120,14 @@ def dispatchCorrect(values):
     if not (isinstance(values.get('lat'), basestring) and isinstance(values.get('long'), basestring) and
                 isinstance(values.get('altitude'), basestring) and isinstance(values.get('assumedLat'), basestring) and
                 isinstance(values.get('assumedLong'), basestring)):
-        values['error'] = "All parameters must be strings."
+        values['error'] = "All parameters (lat, long, altitude, assumedLat, assumedLong) must be passed and be strings."
+        return values
+
+    if 'correctedAzimuth' in values:
+        values['error'] = "correctedAzimuth can't be present in the input parameter list."
+        return values
+    elif 'correctedDistance' in values:
+        values['error'] = "correctedDistance can't be present in the input parameter list."
         return values
     try:
         sec = SEC.SightingErrorCorrector(values['lat'], values['long'], values['altitude'], values['assumedLat'], values['assumedLong'])
