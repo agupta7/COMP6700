@@ -91,11 +91,17 @@ class DispatchTest(unittest.TestCase):
         dict = dispatch.dispatch({'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
         self.assertIn("correctedAzimuth", dict)
         self.assertIn("correctedDistance", dict)
+    def test400_020DispatchCorrectIsAccurate(self):
+        correction = dispatch.dispatch({'op': 'correct', 'lat': '89d20.1', 'long': '154d5.4', 'altitude': '37d17.4', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
+        self.assertAlmostEquals(float(correction.get('correctedDistance')), 104, delta=0.15)
+        self.assertEquals(correction.get('correctedAzimuth'), '0d36.8')
 
     def test400_810_DispatchCorrectCorrectedAzimuthPresent(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3', 'correctedAzimuth': ''})
         self.assertIsInstance(dict.get('error'), basestring)
-
+    def test400_820_DispatchCorrectCorrectedDistancePresent(self):
+        dict = dispatch.dispatch({'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3', 'correctedDistance': ''})
+        self.assertIsInstance(dict.get('error'), basestring)
 
     def test400_910DispatchIncorrectParameterType(self):
         dict = dispatch.dispatch({'op': 'correct', 'lat': 16.5, 'long': '95d41.6', 'altitude': '13d42.3', 'assumedLat': '-53d38.4', 'assumedLong': '74d35.3'})
