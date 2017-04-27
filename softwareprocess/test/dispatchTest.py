@@ -99,7 +99,13 @@ class DispatchTest(unittest.TestCase):
     # thorough boundary value coverage is in the SightingErrorCorrectorTest class
     # this is just ensuring that the error being thrown there translates to an error string here
     def test400_710_DispatchCorrectLatOutOfBounds(self):
-        correction = dispatch.dispatch({'op': 'correct', 'lat': '90d0e.0', 'long': '154d5.4', 'altitude': '37d17.4', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
+        correction = dispatch.dispatch({'op': 'correct', 'lat': '90d0.0', 'long': '154d5.4', 'altitude': '37d17.4', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
+        self.assertIsInstance(correction.get('error'), basestring)
+    def test400_720_DispatchCorrectLongOutOfBounds(self):
+        correction = dispatch.dispatch({'op': 'correct', 'lat': '9d0.0', 'long': '360d0.0', 'altitude': '37d17.4', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
+        self.assertIsInstance(correction.get('error'), basestring)
+    def test400_730_DispatchCorrectAltitudeOutOfBounds(self):
+        correction = dispatch.dispatch({'op': 'correct', 'lat': '9d0.0', 'long': '36d0.0', 'altitude': '0d0.0', 'assumedLat': '35d59.7', 'assumedLong': '74d35.3'})
         self.assertIsInstance(correction.get('error'), basestring)
 
     def test400_810_DispatchCorrectCorrectedAzimuthPresent(self):
