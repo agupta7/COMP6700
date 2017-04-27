@@ -6,6 +6,8 @@ class Angle:
             self.setDegreesString(angle)
         elif isinstance(angle, (int, long, float)):
             self.setDegreesFloat(float(angle))
+        elif isinstance(angle, Angle):
+            self.setDegreesFloat(angle._degreesFloat)
         else:
             raise ValueError("String should in format XdY.Y where X is degrees and Y.Y is floating point minutes")
 
@@ -28,9 +30,9 @@ class Angle:
             degreesFloat = degrees + minutes / 60
             if pieces[0].find("-") == 0:
                 degreesFloat = degreesFloat * -1
-            self.setDegreesFloat(degreesFloat)
         except ValueError as er:
             raise ValueError(strDegreesMinutesFormatError)
+        self.setDegreesFloat(degreesFloat)
 
     def setDegreesFloat(self, degNum):
         strDegreesMinutesFormatError = "Degrees should be a float"
