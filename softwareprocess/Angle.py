@@ -53,8 +53,6 @@ class Angle:
         if minutesTotal < 0:
             strOut = "-" + strOut
         min = abs(minutesTotal - degrees * 60)
-        min_frac = min - int(min)
-        #strOut += format(int(min), '02')
         strOut += str(float(min))
         #strOut += "{:.1f}".format(min_frac).lstrip('0')
         return strOut
